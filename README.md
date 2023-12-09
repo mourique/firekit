@@ -5,3 +5,12 @@ This is my boilerplate for KirbyCMS based on plainkit with everything i need for
 ## Create a new Project from 🔥FireKit
 
 `composer create-project mourique/firekit PROJECTNAME`
+
+# Additions to plainkit
+
+- /assets folder with scripts.js and styles.css
+- /partials for header and footer
+- HTML Skeleton
+- sticky footer css
+- webfont css
+- tachyons preloader
