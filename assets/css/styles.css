@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+@font-face{
+ font-family: 'Noe Text';
+ src: url('../fonts/noe-text-semibold.eot');
+ src: url('../fonts/noe-text-semibold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/noe-text-semibold.woff') format('woff'),
+      url('../fonts/noe-text-semibold.otf') format('opentype'); }
+
 body {
   margin: 0;
   padding: 0;
