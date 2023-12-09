@@ -1,7 +1,12 @@
+# Added by Felix F.
+/kirby
+/vendor
+
 # System files
 # ------------
 
 Icon
+Icon?
 .DS_Store
 
 # Temporary files
