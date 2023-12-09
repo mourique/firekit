@@ -1,1 +1,7 @@
-<h1><?= $page->title() ?></h1>
+<?= snippet('partials/header') ?>
+
+<main>
+  <h1>Main: <?= $page->title() ?></h1>
+</main>
+
+<?= snippet('partials/footer') ?>
