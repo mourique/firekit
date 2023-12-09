@@ -1,0 +1,8 @@
+title: Default File
+
+fields:
+  alt:
+    label: Alternativer Text
+    type: text
+    width: 1/2
+    help: Wird als alt=""-tag benutzt, falls in dem Block nicht an anderer Stelle ein alt-tag definiert wird.
