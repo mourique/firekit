@@ -32,6 +32,8 @@
     "optimize-autoloader": true
   },
   "scripts": {
+    "pull-content": "rsync -av HOST:/PATHTOSITE/content/ content/",
+    "dry-pull-content": "rsync -anv HOST:/home/PATHTOSITE/content/ content/",
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
