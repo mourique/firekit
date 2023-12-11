@@ -1,3 +1,26 @@
+# conditional SIMPLEAUTH and https://www.
+# change values in uppercase
+# needs a .htpasswd
+
+<If "req('Host') == 'FIREKIT.COM'">
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteCond %{HTTP_HOST} !^www.FIREKIT.COM
+    RewriteRule ^(.*)$ https://www.FIREKIT.COM/$1 [R=301,L]
+	Require all granted
+</If>
+
+<ElseIf "req('Host') == 'DEV.FIREKIT.COM'">
+    AuthUserFile /home/FIREKIT/public_html/DEV.FIREKIT.COM/.htpasswd
+    AuthType Basic
+    AuthName "Password Protected"
+    Require valid-user
+</ElseIf>
+
+<Else>
+</Else>
+
 # Kirby .htaccess
 # revision 2023-07-22
 
