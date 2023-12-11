@@ -9,6 +9,7 @@ What is added:
 - sticky footer css
 - webfont css
 - tachyons preloader
+- conditional BASIC AUTH and https://www
 
 ## Create a new Project ➕ 
 

@@ -1,7 +1,7 @@
 <?= snippet('partials/header') ?>
 
 <main>
-  <h1>Main: <?= $page->title() ?></h1>
+  <?= $page->text()->kt() ?>
 </main>
 
 <?= snippet('partials/footer') ?>
