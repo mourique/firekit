@@ -3,13 +3,13 @@
 This is my boilerplate for KirbyCMS based on plainkit with everything i need for creating websites. You can learn more about Kirby at [getkirby.com](https://getkirby.com).
 
 What is added: 
-- /assets folder with scripts.js and styles.css
-- /partials for header and footer
-- HTML Skeleton
-- sticky footer css
-- webfont css
-- tachyons preloader
-- conditional BASIC AUTH and https://www
+- 📁 /assets folder with scripts.js and styles.css
+- 🗃️ /partials for header and footer
+- 💀 HTML Skeleton
+- 🦶 sticky footer css
+- 🔠 webfont css
+- 🏃‍♀️tachyons preloader
+- 🔒 conditional BASIC AUTH and https://www
 
 ## Create a new Project ➕ 
 
