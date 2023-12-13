@@ -2,12 +2,15 @@
   box-sizing: border-box;
 }
 
+/* webfont ***********************************************************************/
+
 @font-face{
  font-family: 'Noe Text';
  src: url('../fonts/noe-text-semibold.eot');
  src: url('../fonts/noe-text-semibold.eot?#iefix') format('embedded-opentype'),
       url('../fonts/noe-text-semibold.woff') format('woff'),
       url('../fonts/noe-text-semibold.otf') format('opentype'); }
+/* /end webfont  *****************************************************************/
 
 body {
   margin: 0;
@@ -22,7 +25,12 @@ body {
   font-family: sans-serif;
 }
 
-/* sticky footer */
+/* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+a {
+  word-break: break-word;
+}
+
+/* sticky footer *****************************************************************/
 body {
   display: flex;
   flex-direction: column;
@@ -39,4 +47,5 @@ main {
 footer {
   flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
 }
+/* /end sticky footer *****************************************************************/
 
