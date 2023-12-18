@@ -1,6 +1,7 @@
 # Added by Felix F.
 /kirby
 /vendor
+/site/plugins
 
 # System files
 # ------------
