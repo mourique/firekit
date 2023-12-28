@@ -10,11 +10,14 @@ What is added:
 - 🔠 webfont css
 - 🏃‍♀️tachyons preloader
 - 🔒 conditional BASIC AUTH and https://www
+- 🖌️ predefined layouts with common functions
+- 🗳️ custom blocks with mourique/kirby-blocks-factory
+- 🖼️ lazyloading images with srcset and sizes
+- 🔤 typographic scale based on utopia.fyi
 
 ## Create a new Project ➕ 
 
 `composer create-project mourique/firekit PROJECTNAME`
-
 
 
 ## Deployments 🔼

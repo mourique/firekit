@@ -1,0 +1,878 @@
+:root {
+    /* logo marquee */
+  --size: clamp(4rem, 1rem + 40vmin, 20rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+
+/***
+ *
+ *    88           88                           88             88
+ *    88           88                           88             ""
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8       88  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYb,d8   ,adPPYba,
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"        88  88P'   "88"    "8a  ""     `Y8  a8"    `Y88  a8P_____88
+ *    88       d8  88  8b       d8  8b          8888[          88  88      88      88  ,adPPPPP88  8b       88  8PP"""""""
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,       88  88      88      88  88,    ,88  "8a,   ,d88  "8b,   ,aa
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a      88  88      88      88  `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'
+ *                                                                                                  aa,    ,88
+ *                                                                                                   "Y8bbdP"
+ */
+
+
+.content-wrapper figure {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1;
+}
+
+.content-wrapper .block.block-image figure img {
+  object-fit: cover;
+  min-height: 100%;
+}
+
+figcaption {
+  font-size: var(--step--1);
+  margin-top: 0.3em !important;
+}
+
+.block.block-image figure {
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .block.block-image figure {
+    padding-top: var(--padding-top);
+    padding-right: var(--padding-right);
+    padding-bottom: var(--padding-bottom);
+    padding-left: var(--padding-left);
+  }
+}
+
+/* @media (min-width: 1024px) end */
+
+.block.block-image figure img {
+  aspect-ratio: var(--aspect-ratio);
+}
+
+.block.block-image figure img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* TODO: switch aspect ratio on portrait */
+@media (orientation: portrait) {
+  .block.block-image figure .img-wrapper {
+    height: var(--image-height-mobile);
+  }
+}
+
+.content-wrapper figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.block-image figure a {
+  display: block;
+  text-decoration: none;
+}
+
+.block-image figure a:hover figcaption {
+  text-decoration: underline;
+}
+
+.block-image img {
+  transition: 340ms transform ease-in-out;
+  display: block;
+}
+
+.block-image .img-wrapper {
+}
+
+.block-image figure a:hover img {
+  transform: scale(1.02);
+}
+
+
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *    88                                                                          88  88           88
+ *    ""                                                                          88  ""           88
+ *                                                                                88               88
+ *    88  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYb,d8   ,adPPYba,      ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+ *    88  88P'   "88"    "8a  ""     `Y8  a8"    `Y88  a8P_____88      I8[    ""  88  88  a8"    `Y88  a8P_____88  88P'   "Y8
+ *    88  88      88      88  ,adPPPPP88  8b       88  8PP"""""""       `"Y8ba,   88  88  8b       88  8PP"""""""  88
+ *    88  88      88      88  88,    ,88  "8a,   ,d88  "8b,   ,aa      aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  88
+ *    88  88      88      88  `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'      `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  88
+ *                                         aa,    ,88
+ *                                          "Y8bbdP"
+ */
+
+@media (max-width: 768px) {
+  .block.block-linkslider,
+  .block.block-imageslider {
+    overflow: hidden;
+  }
+}
+
+.image-slider.keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide {
+  /* width: auto;
+  overflow: visible; */
+  min-width: auto;
+  overflow: visible;
+}
+
+.image-slider .keen-slider__slide {
+  height: 40vh;
+  width: auto;
+  width: 100%;
+  min-width: 100%;
+  object-fit: contain;
+}
+
+.image-slider .keen-slider__slide img {
+  height: inherit;
+  width: auto;
+  object-fit: contain;
+}
+
+.autoplay-slider.images-contained {
+  height: 100px;
+}
+
+.autoplay-slider.images-contained .keen-slider__slide {
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border:1px solid black; */
+}
+
+.autoplay-slider.images-contained .keen-slider__slide img {
+  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.link-slider.keen-slider .keen-slider__slide {
+  max-width: 80vw;
+  min-width: 40vw;
+  overflow: visible;
+}
+
+.link-slider .keen-slider__slide img {
+  transition: transform 240ms ease-in-out;
+}
+
+.link-slider .keen-slider__slide:hover img {
+  transform: scale(1.02);
+
+}
+
+/*
+@media (min-width: 1700px) {
+
+	.keen-slider__slide:first-child {
+		margin-left: calc(50vw - 1700px/2);
+	}
+
+
+
+} */
+
+
+.keen-slider {
+  max-width: 1660px !important;
+  overflow: visible !important;
+  position: relative;
+}
+
+
+.link-slider figure {
+  aspect-ratio: 6/7;
+}
+
+
+.link-slider a {
+  text-decoration: none;
+
+}
+
+.link-slider .slide-title {
+  font-size: var(--step-3);
+  /* font-weight:bold; */
+  color: black;
+  text-transform: uppercase;
+  line-height: 0.95;
+  padding-top: 10px;
+  display: block;
+}
+
+.navigation-wrapper {
+  position: relative;
+}
+
+.controls-wrapper {
+  margin-top: 2rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.dots {
+  display: flex;
+  padding: 6px 0;
+  margin: 0 10px;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 20px;
+  height: 20px;
+  background: #dedede;
+  background: white;
+  border: 2px solid black;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 100vh;
+  transition: 140ms all ease-in-out;
+  transition-delay: 45ms;
+}
+
+@media (min-width: 769px) {
+  .dot:last-child {
+    display: none;
+  }
+
+  .dot--active {
+    width: 55px
+  }
+
+}
+
+@media (min-width: 1281px) {
+  .dot:last-child,
+  .dot:nth-last-child(2) {
+    display: none;
+  }
+
+  .dot--active {
+    width: 75px
+  }
+}
+
+
+.dot:focus {
+  outline: none;
+}
+
+.dot--active {
+  background: black;
+}
+
+.arrow {
+  display: none;
+  width: 30px;
+  height: 30px;
+  /*
+    position: absolute;*/
+  /* top: 0%;
+  transform: translateY(-200%);
+  -webkit-transform: translateY(-200%); */
+  bottom: -45px;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 0px;
+  fill: "#fff";
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--right {
+  left: auto;
+  left: 40px;
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--disabled {
+  opacity: 0;
+  cursor: default
+}
+
+.arrow--disabled.arrow--left {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--disabled.arrow--right {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *             88  88                         88
+ *             88  ""                         88
+ *             88                             88
+ *     ,adPPYb,88  88  ,adPPYYba,  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8
+ *    a8"    `Y88  88  ""     `Y8  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'
+ *    8b       88  88  ,adPPPPP88   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'
+ *    "8a,   ,d88  88  88,    ,88  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'
+ *     `"8bbdP"Y8  88  `"8bbdP"Y8  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP
+ *
+ *
+ */
+
+/*
+essential styles:
+these make the slideshow work
+*/
+
+
+.block.block-diashow {
+}
+
+.block.block-diashow .fadein {
+  position: relative;
+  overflow: hidden;
+  min-height: 30vh;
+  max-width: 100%;
+  aspect-ratio: var(--aspect-ratio);
+  background: #000;
+}
+
+
+.block.block-diashow .fadein picture.slide {
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  z-index: 1;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  object-fit: cover;
+}
+
+.block.block-diashow.diashow-automatic .fadein picture.slide {
+    -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.block.block-diashow .fadein picture.slide img {
+  min-width: 100%;
+  min-height: 100%;
+
+  max-width: 100%;
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  object-fit: cover;
+}
+
+.block.block-diashow .fadein picture.slide.showing {
+  opacity: 1;
+  z-index: 2;
+}
+
+@media (orientation: portrait) {
+  .block.block-diashow .fadein {
+    height: var(--image_height_mobile);
+    aspect-ratio: auto;
+  }
+
+  .block.block-diashow .fadein picture.slide img {
+    height: var(--image_height_mobile);
+    object-fit: cover;
+  }
+}
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *    88                                                      88              88
+ *    88                                               ,d     ""              88
+ *    88                                               88                     88
+ *    88   ,adPPYba,    ,adPPYb,d8   ,adPPYba,       MM88MMM  88   ,adPPYba,  88   ,d8    ,adPPYba,  8b,dPPYba,
+ *    88  a8"     "8a  a8"    `Y88  a8"     "8a        88     88  a8"     ""  88 ,a8"    a8P_____88  88P'   "Y8
+ *    88  8b       d8  8b       88  8b       d8        88     88  8b          8888[      8PP"""""""  88
+ *    88  "8a,   ,a8"  "8a,   ,d88  "8a,   ,a8"        88,    88  "8a,   ,aa  88`"Yba,   "8b,   ,aa  88
+ *    88   `"YbbdP"'    `"YbbdP"Y8   `"YbbdP"'         "Y888  88   `"Ybbd8"'  88   `Y8a   `"Ybbd8"'  88
+ *                      aa,    ,88
+ *                       "Y8bbdP"
+ */
+
+.block.block-logoticker {
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-left: calc(-1 * (20px + 1vw));
+  margin-right: calc(-1 * (20px + 1vw));
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  -webkit-animation: scroll-x var(--duration) linear infinite;
+
+  animation: scroll-x var(--duration) linear infinite;
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    animation-play-state: paused;
+  }
+}
+
+.marquee--reverse .marquee__group {
+  -webkit-animation-direction: reverse;
+  -webkit-animation-delay: -3s;
+
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+
+
+@-webkit-keyframes scroll-x {
+  from {
+    -webkit-transform: translateX(var(--scroll-start));
+  }
+  to {
+    -webkit-transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+
+/* Element styles */
+.marquee svg,
+.marquee figure {
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  fill: var(--color-text);
+  aspect-ratio: 16/9;
+  padding: calc(var(--size) / 10);
+}
+
+.marquee figure img {
+  object-fit: contain;
+}
+
+.marquee--vertical svg {
+  aspect-ratio: 1;
+  width: calc(var(--size) / 1.5);
+  padding: calc(var(--size) / 6);
+}
+
+/* Parent wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+  max-width: 100vw;
+}
+
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *             88                                   88           88                           88
+ *             88                ,d                 88           88                           88
+ *             88                88                 88           88                           88
+ *     ,adPPYb,88  ,adPPYYba,  MM88MMM  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    a8"    `Y88  ""     `Y8    88     ""     `Y8  88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    8b       88  ,adPPPPP88    88     ,adPPPPP88  88       d8  88  8b       d8  8b          8888[
+ *    "8a,   ,d88  88,    ,88    88,    88,    ,88  88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *     `"8bbdP"Y8  `"8bbdP"Y8    "Y888  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ */
+
+main .content-wrapper .row .block-datablock {
+  container-type: inline-size;
+}
+
+.datablock-wrapper {
+  column-count: 2;
+}
+
+.datablock-wrapper .datablock {
+  break-inside: avoid-column;
+  margin-bottom: 20px;
+  font-size: var(--step--2);
+}
+
+.block-datablock .datablock strong {
+  text-transform: uppercase;
+  font-size: var(--step--2);
+}
+
+@container (min-width: 847px) {
+
+  .datablock-wrapper {
+    column-count: 4;
+
+  }
+}
+
+@container (min-width: 1400px) {
+
+  .datablock-wrapper {
+    column-count: 6;
+
+  }
+}
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *    88           88                           88
+ *    88           88                           88                                                  ,d
+ *    88           88                           88                                                  88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8    ,adPPYb,d8  88       88   ,adPPYba,   MM88MMM   ,adPPYba,
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"    a8"    `Y88  88       88  a8"     "8a    88     a8P_____88
+ *    88       d8  88  8b       d8  8b          8888[      8b       88  88       88  8b       d8    88     8PP"""""""
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,   "8a    ,d88  "8a,   ,a88  "8a,   ,a8"    88,    "8b,   ,aa
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a   `"YbbdP'88   `"YbbdP'Y8   `"YbbdP"'     "Y888   `"Ybbd8"'
+ *                                                                  88
+ *                                                                  88
+ */
+
+.block.block-quote blockquote {
+  margin: 0;
+  font-size: var(--step-4);
+  line-height: 1.1;
+}
+
+.block.block-quote blockquote footer {
+  font-size: var(--step--1);
+  margin-top: 1rem;
+}
+
+.block.block-quote blockquote footer:before {
+  content: "—";
+}
+
+
+/*** .block .block-list
+ *
+ *    88           88                           88             88  88
+ *    88           88                           88             88  ""               ,d
+ *    88           88                           88             88                   88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8       88  88  ,adPPYba,  MM88MMM
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"        88  88  I8[    ""    88
+ *    88       d8  88  8b       d8  8b          8888[          88  88   `"Y8ba,     88
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,       88  88  aa    ]8I    88,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a      88  88  `"YbbdP"'    "Y888
+ *
+ *
+ */
+
+main .content-wrapper .row .block-list {
+  container-type: inline-size;
+}
+
+main .content-wrapper .row .block-list ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: var(--step--2);
+}
+
+@container (min-width: 847px) {
+  main .content-wrapper .row .block-list ul {
+    columns: 2;
+  }
+
+  main .content-wrapper .row .block-list ul li:first-child {
+    border-top: 1px solid black;
+  }
+}
+
+@container (min-width: 1200px) {
+  main .content-wrapper .row .block-list ul {
+    columns: 3;
+  }
+}
+
+main .content-wrapper .row .block-list ul li {
+  padding: var(--step--2) 0;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+main .content-wrapper .row .block-list ul li + li {
+  border-top: 1px solid black;
+}
+
+main .content-wrapper .row .block-list .list-title {
+  text-transform: uppercase;
+}
+
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *    88  88               88         88  88
+ *    88  ""               88         88  ""               ,d
+ *    88                   88         88                   88
+ *    88  88  8b,dPPYba,   88   ,d8   88  88  ,adPPYba,  MM88MMM
+ *    88  88  88P'   `"8a  88 ,a8"    88  88  I8[    ""    88
+ *    88  88  88       88  8888[      88  88   `"Y8ba,     88
+ *    88  88  88       88  88`"Yba,   88  88  aa    ]8I    88,
+ *    88  88  88       88  88   `Y8a  88  88  `"YbbdP"'    "Y888
+ *
+ *
+ */
+
+/* linklist block */
+.block-linklist {
+  container-type: inline-size;
+}
+
+.block-linklist {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: word;
+  gap: 10px;
+  margin-left: 63px;
+}
+
+.block-linklist a {
+  /* display: flex;
+  float:left; */
+  margin-left: -63px;
+  display: inline-flex;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: var(--step-5);
+  font-weight: bold;
+}
+
+@media (max-width: 468px) {
+  .block-linklist {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .block-linklist a {
+    margin-left: 0px;
+  }
+}
+
+.block-linklist a span {
+  padding: 0px 20px 0 20px;
+  line-height: 1;
+}
+
+.block-linklist a:hover span {
+  mix-blend-mode: multiply;
+  /* background-color:white;
+  display:block;
+  color:black; */
+}
+
+.block-linklist a:hover {
+  text-decoration: underline;
+}
+
+/* main .content-wrapper .row .block-linklist a:before{
+	content: "";
+	width: var(--step-2);
+	display:block;
+	border-bottom: 7px solid black;
+	margin-right: var(--step-0);
+	height: calc(var(--step-4) / 2 + 5px);
+} */
+
+.block-linklist a:before,
+.block-linklist a:after {
+  padding: 0px 0px;
+  mix-blend-mode: difference;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0px;
+  margin-top: calc(var(--step-4) / 2 + 5px);
+  border-color: white;
+  border-style: solid;
+}
+
+.block-linklist a:before {
+  border-left-width: 50px;
+}
+
+.block-linklist a:after {
+  border-right-width: 50px;
+}
+
+@media (max-width: 468px) {
+  .block-linklist a:before,
+  .block-linklist a:after {
+    border-width: 0px;
+  }
+}
+
+section.background-dust-storm .block-linklist a:before,
+section.background-dust-storm .block-linklist a:after {
+  border-color: var(--dust-storm);
+}
+
+section.background-confetti-yellow .block-linklist a:before,
+section.background-confetti-yellow .block-linklist a:after {
+  border-color: var(--confetti-yellow);
+
+}
+
+section.background-marina-blue .block-linklist a:before,
+section.background-marina-blue .block-linklist a:after {
+  border-color: var(--marina-blue);
+}
+
+.block-linklist a.linklist-item img {
+  opacity: 1;
+  /* transition: opacity 40ms ease-in; */
+  position: fixed;
+  overflow: hidden;
+  background: white;
+  padding: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(0%, 0%);
+  z-index: 999;
+  transform: translateX(-33%);
+}
+
+.block-linklist a.linklist-item:hover img {
+  opacity: 1;
+  border-radius: 0px;
+  width: 650px;
+  height: 400px;
+}
+
+.block-linklist a.linklist-item:hover img {
+  object-fit: cover;
+}
+
+
+@media (max-width: 468px) {
+  .block-linklist a.linklist-item:hover img {
+    display: none;
+  }
+}
+

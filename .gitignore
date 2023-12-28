@@ -2,6 +2,7 @@
 /kirby
 /vendor
 /site/plugins
+/content
 
 # System files
 # ------------

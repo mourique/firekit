@@ -1,21 +1,148 @@
-title: Default Page
+title: Standardseite
+tabs:
+  content:
+    columns:
+      main:
+        width: 3/4
+        sections:
+          fields:
+            type: fields
+            fields:
+              layout:
+                type: layout
+                label: Seiteninhalt
+                layouts:
+                  - "1/1"
+                  - "1/2"
+                  - "2/3"
+                  - "1/2, 1/2"
+                  - "1/3, 1/3, 1/3"
+                  - "1/4, 1/4, 1/4, 1/4"
+                  - "2/3, 1/3"
+                  - "1/2, 1/4, 1/4"
+                  - "1/3, 2/3"
+                  - "1/1, 1/2, 1/2"
+                  - "1/1, 1/3, 1/3, 1/3"
+                  - "1/1, 1/4, 1/4, 1/4, 1/4"
+                  - "1/1, 1/3, 2/3"
+                  - "1/1, 2/3, 1/3"
+                  - "1/1, 1/2, 1/4, 1/4"
+                  - "1/1, 1/2, 1/4, 1/4, 1/1"
+                fieldsets:
+                  - heading
+                  - text
+                  - image
+                  - list
+                  - quote
+                  - datablock
+                  - button
+                  - diashow
+                  - linklist
+                  - logoticker
+                  - imageslider
+                  - linkslider
+                  - pagination
+                  - form
+                settings:
+                  fields:
+                    headline_decor:
+                      label: Farben & Hintergrundbild
+                      type: headline
+                    themecolors:
+                      extends: fields/themecolors
+                      width: 1/2
+                    backgroundimage:
+                      label: Background image
+                      type: files
+                      label: Hintergrundbild
+                      width: 1/2
+                    backgroundimage_position:
+                      label: Position des Hintergrundbildes
+                      type: select
+                      width: 1/2
+                      required: true
+                      default: full
+                      options:
+                        full: "volle Breite"
+                        right_half: "rechte Hälfte"
+                    backgroundimage_vertical_position:
+                      label: Vertikale Positionierung des Bildes
+                      type: toggles
+                      width: 1/2
+                      default: top
+                      options:
+                        - value: top
+                          text: Oben
+                          icon: layout-top-line
+                        - value: center
+                          text: Mitte
+                          icon: layout-row-line
+                        - value: bottom
+                          text: Unten
+                          icon: layout-bottom-line
+                    headline_padding:
+                      label: Abstände, Begrenzungen & Größen
+                      type: headline
+                    padding:
+                      type: multiselect
+                      width: 1/3
+                      label: Innenabstand
+                      options:
+                        top_padding: "Oben"
+                        bottom_padding: "Unten"
+                      default: top_padding, bottom_padding
+                    bordertop:
+                      type: toggle
+                      label: Linie über der Sektion
+                      width: 1/3
+                      text:
+                        - "nein"
+                        - "ja"
+                    verticalcenter:
+                      type: toggle
+                      label: Inhalt vertikal zentrieren
+                      width: 1/3
+                      text:
+                        - "nein"
+                        - "ja"
+                    contentwidth:
+                      type: toggles
+                      width: 1/2
+                      label: Breite des Inhalts
+                      options:
+                        content_regular: "Regular"
+                        content_small: "Small"
+                        content_max: "Max"
+                        content_full_width: "Full"
+                      default: content_regular
 
-columns:
-  main:
-    width: 2/3
-    sections:
-      fields:
-        type: fields
-        fields:
-          text:
-            type: textarea
-            size: huge
-  sidebar:
-    width: 1/3
-    sections:
-      pages:
-        type: pages
-        template: default
-      files:
-        type: files
-
+                    minheight:
+                      type: text
+                      label: Mindesthöhe der Sektion
+                      help: inkl. Einheit (px, %, vh, rem, etc.)
+                      width: 1/2
+                    headline_mobile:
+                      label: Einstellungen für mobile Endgeräte
+                      type: headline
+                    collapse_on_mobile:
+                      type: toggle
+                      label: Sektion auf Mobilgeräten zusammenklappen
+                      width: 1/2
+                    columns_as_sections_on_mobile:
+                      type: toggle
+                      label: Behandel die Spalten wie einzelne Sektionen in Mobile (mehr Abstand)
+                      help: wenn aktiviert, wird der Abstand auf mobile zwischen den Spalten genauso groß gemacht wie zwischen zwei Sektionen
+                      text:
+                        - "nein"
+                        - "ja"
+                      width: 1/2
+      sidebar:
+        width: 1/4
+        sections:
+          pages:
+            type: pages
+            template: default
+            label: Unterseiten
+          files:
+            type: files
+            label: Dateien auf dieser Seite
