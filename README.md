@@ -14,11 +14,10 @@ What is added:
 - 🗳️ custom blocks with mourique/kirby-blocks-factory
 - 🖼️ lazyloading images with srcset and sizes
 - 🔤 typographic scale based on utopia.fyi
+- 🎨 programmatically defined themecolors and containersizes
 
-## Create a new Project ➕ 
-
+## Create a new Project ➕
 `composer create-project mourique/firekit PROJECTNAME`
-
 
 ## Deployments 🔼
 
@@ -53,3 +52,27 @@ What is added:
 - run `composer run-scripts pull-content`
   - or `dry-pull-content`
 
+## Configure Branding with $themecolors and $containersizes
+
+this code will be used in kirby panel and generate the css (`header.php`, `default.php`)
+
+```php
+<?php
+return [
+    /* define the brand colors here, lowercase letters */
+    'themecolors' => [
+        ['name' => 'bordeaux',  'background' => '#CFDBD5',  'foreground' => '#333533' ],
+        ['name' => 'magnolia',  'background' => '#E8EDDF',  'foreground' => '#444444' ],
+        ['name' => 'sparrow',  'background' => '#242423',  'foreground' => '#E8EDDF' ],
+        ['name' => 'carbon',    'background' => '#F5CB5C',  'foreground' => '#242423' ]
+    ],
+    /* define the width of content here, well be used in kirby panel and in css */
+    'containersizes' => [
+        ['name' => 'Standard',      'slug' => 'regular',    'width' => '90vw',  'max-width' => 'max(60vw, 1500px)' ],
+        ['name' => 'Randlos',       'slug' => 'full',       'width' => '100%',  'max-width' => '100%' ],
+        ['name' => 'Volle Breite',  'slug' => 'max',        'width' => '98vw',  'max-width' => '2200px' ],
+        ['name' => 'Schmal',        'slug' => 'small',      'width' => '90vw',  'max-width' => 'max(50vw, 1000px)' ],
+        ['name' => 'Breit',         'slug' => 'large',      'width' => '98vw',  'max-width' => '1700px' ]
+    ]
+];
+```
