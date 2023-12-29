@@ -1,0 +1,16 @@
+{
+    "name": "ffeierabend/block-factory",
+    "description": "A Collection of Reusable Kirby Blocks",
+    "license": "propietary",
+    "type": "kirby-plugin",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Felix Feierabend",
+            "email": "mail@felixf.de"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}

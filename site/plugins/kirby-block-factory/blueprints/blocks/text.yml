@@ -1,0 +1,26 @@
+name: field.blocks.text.name
+icon: text
+wysiwyg: true
+preview: text
+fields:
+  text:
+    type: writer
+    nodes: false
+    placeholder: field.blocks.text.placeholder
+  size:
+    type: select
+    label: Textgröße
+    required: true
+    default: regular_text
+    options:
+      super_large_text: "Sehr großer Text"
+      large_text: "Großer Text"
+      regular_text: "Normaler Text"
+      small_text: "Kleiner Text"
+      super_small_text: "Sehr kleiner Text"
+  centered:
+    type: toggle
+    label: Mittelachse
+    text:
+      - "nein"
+      - "ja"

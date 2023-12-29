@@ -1,7 +1,8 @@
 # Added by Felix F.
 /kirby
 /vendor
-/site/plugins
+/site/plugins/*
+!/site/plugins/kirby-block-factory
 /content
 
 # System files

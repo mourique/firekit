@@ -1,0 +1,6 @@
+name: Logoticker
+icon: dots
+fields:
+  images:
+    label: Bilder
+    type: files

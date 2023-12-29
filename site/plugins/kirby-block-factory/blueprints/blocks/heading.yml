@@ -1,0 +1,62 @@
+name: field.blocks.heading.name
+icon: bolt
+wysiwyg: true
+preview: heading
+fields:
+  level:
+    label: field.blocks.heading.level
+    type: select
+    empty: false
+    default: "h2"
+    width: 1/6
+    options:
+      - h1
+      - h2
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+  size:
+    label: Größe der Überschrift
+    type: select
+    width: 2/6
+    options:
+      - looks-like-h000
+      - looks-like-h00
+      - looks-like-h0
+      - looks-like-h1
+      - looks-like-h2
+      - looks-like-h3
+      - looks-like-h4
+      - looks-like-h5
+      - looks-like-h6
+  centered:
+    label: Mittelachse
+    type: toggle
+    width: 2/6
+    text:
+      - "nein"
+      - "ja"
+
+  sticky:
+    label: Sticky
+    type: toggle
+    width: 1/6
+    text:
+      - "nein"
+      - "ja"
+  no_cap:
+    label: Gemischtschreibweise
+    type: toggle
+    width: 2/6
+    text:
+      - "nein"
+      - "ja"
+  text:
+    label: field.blocks.heading.text
+    type: writer
+    inline: true
+    width: 1/1
+    placeholder: field.blocks.heading.placeholder
+    help: Vertikalen Strich | verwenden, um eine Silbentrennung vorzugeben.

@@ -1,0 +1,226 @@
+/* block text */
+.k-block-type-text-input {
+	font-size: var(--text-base);
+	line-height: 1.5em;
+	height: 100%;
+}
+.k-block-type-text,
+.k-block-container-type-text,
+.k-block-type-text .k-writer .ProseMirror {
+	height: 100%;
+}
+
+.k-block-type-text-input[data-size="large-text"] {
+	font-size:120%;
+}
+
+.k-block-type-text-input[data-size="super-large-text"] {
+	font-size:150%;
+}
+
+.k-block-type-text-input[data-size="small-text"] {
+	font-size:80%;
+}
+
+/* block heading */
+.k-block-type-heading-input {
+	line-height: 1.25em;
+	font-weight: var(--font-bold);
+}
+.k-block-type-heading-input[data-level="h1"] {
+	font-size: var(--text-3xl);
+	line-height: 1.125em;
+}
+.k-block-type-heading-input[data-level="h2"] {
+	font-size: var(--text-2xl);
+}
+.k-block-type-heading-input[data-level="h3"] {
+	font-size: var(--text-xl);
+}
+.k-block-type-heading-input[data-level="h4"] {
+	font-size: var(--text-lg);
+}
+.k-block-type-heading-input[data-level="h5"] {
+	line-height: 1.5em;
+	font-size: var(--text-base);
+}
+.k-block-type-heading-input[data-level="h6"] {
+	line-height: 1.5em;
+	font-size: var(--text-sm);
+}
+.k-block-type-heading-input[data-centered="true"] {
+	text-align:center;
+}
+.k-block-type-heading-input .ProseMirror strong {
+	font-weight: 700;
+}
+
+/* block image */
+.k-block-type-image .k-block-figure-container {
+	display: block;
+	text-align: center;
+	line-height: 0;
+}
+.k-block-type-image-auto {
+	max-width: 100%;
+	max-height: 30rem;
+}
+
+.k-block-type-image[data-level="h6"] {
+	line-height: 1.5em;
+	font-size: var(--text-sm);
+}
+
+/* block button */
+
+.k-block-type-button input {
+    border: 2px solid #000;
+    border-radius: 3rem;
+    padding: .25rem 2px;
+    width: auto;
+    cursor: pointer;
+    font: inherit;
+    text-align: center;
+}
+.k-block-type-button input:focus {
+    outline: 0;
+    border-color: var(--color-focus);
+}
+
+/* block datablock */
+
+
+
+.k-block-type-datablock {
+	column-count: 2;
+}
+
+.k-block-type-datablock .datablock-item {
+	break-inside: avoid-column;
+}
+
+.k-block-type-datablock .datablock-headline {
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+.k-block-type-datablock .datablock-content {
+	margin-bottom:20px;
+}
+
+
+/* block diashow */
+
+.k-block-type-diashow {
+	background: #EEE;
+	height: 100%;
+  min-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+/* block linklist */
+
+.k-block-type-linklist {
+  list-style: none;
+	padding: 0px;
+	margin:0px;
+	display: block;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	word-wrap: word;
+	gap: 10px;
+	margin-left: 43px;
+	container-type: inline-size;
+}
+
+.k-block-type-linklist-item {
+	/* display: flex;
+	float:left; */
+	margin-left:-33px;
+	display: inline-flex;
+	font-weight:bold;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.k-block-type-linklist-item span{
+	padding: 0px 20px 0 20px;
+}
+
+
+.k-block-type-linklist-item:before,
+.k-block-type-linklist-item:after {
+	padding: 0px 0px;
+	mix-blend-mode: exclusion;
+	content: "";
+	display: block;
+	height: 0px;
+	width: 0px;
+	margin-top: 11px;
+	border-color: white;
+	border-style: solid;
+}
+
+.k-block-type-linklist-item:before {
+	border-left-width: 30px;
+}
+
+.k-block-type-linklist-item:after {
+	border-right-width: 30px;
+}
+
+
+/* block logoticker */
+
+.k-block-type-logoticker {
+	background: #DDD;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+/* block logoticker */
+
+.k-block-type-imageslider {
+	background: #DDD;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+/* block linkslider */
+
+.k-block-type-linkslider {
+	background: #DDD;
+	height: 100%;
+  min-height: 100px;
+	font-weight: bold;
+  padding: 10px;
+}
+
+.k-block-type-linkslider div {
+  display:flex;
+  gap: 10px;
+}
+
+.k-block-type-linkslider .linkslider_image {
+  height:100%;
+  width: 100%;
+  display:block;
+  min-height: 100px;
+  background:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+

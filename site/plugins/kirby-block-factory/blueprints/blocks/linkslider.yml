@@ -1,0 +1,20 @@
+name: Linkslider
+icon: layers
+fields:
+  list:
+    type: structure
+    label: Liste von Seiten
+    fields:
+      title:
+        label: Seitentitel
+        type: text
+        required: true
+      link:
+        label: Link
+        type: link
+        required: true
+      image:
+        label: Bild
+        type: files
+        max: 1
+        required: true

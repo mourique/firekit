@@ -1,0 +1,20 @@
+name: Linkliste
+icon: text-center
+fields:
+  list:
+    type: structure
+    label: Liste von Seiten
+    fields:
+      title:
+        label: Seitentitel
+        type: text
+        required: true
+      link:
+        label: Link
+        type: link
+        required: true
+      image:
+        label: Hoverbild
+        type: files
+        max: 1
+        required: true

@@ -1,0 +1,7 @@
+name: Button
+icon: tablet
+fields:
+  link:
+    type: link
+  text:
+    type: text

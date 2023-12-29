@@ -1,0 +1,32 @@
+name: Diashow
+icon: images
+fields:
+  images:
+    label: Bilder
+    type: files
+    max: 10
+    layout: cards
+  aspect_ratio:
+    type: select
+    label: Seitenverhältnis der Bilder
+    width: 1/2
+    options:
+      15/7: "15:7"
+      16/9: "16:9"
+      5/3: "5:3"
+      3/2: "3:2"
+      10/12: "10:12"
+      3/4: "3:4"
+      2/3: "2:3"
+  image_height_mobile:
+    width: 1/2
+    type: number
+    after: vh
+    label: Höhe in Mobile
+    width: 1/2
+  only_on_hover:
+    type: toggle
+    label: Diashow nur abspielen, wenn man mit der Maus drüberfährt
+    text:
+      - "nein"
+      - "ja"

@@ -1,0 +1,7 @@
+name: Imageslider
+icon: dashboard
+fields:
+  images:
+    label: Bilder
+    type: files
+    max: 20

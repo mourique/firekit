@@ -1,0 +1,17 @@
+name: Datablock
+icon: file-spreadsheet
+fields:
+  datablocks:
+    type: structure
+    label: Daten
+    fields:
+      headline:
+        type: writer
+        label: Überschrift
+        inline: true
+        marks: false
+      text:
+        type: writer
+        label: Inhalt
+        inline: true
+        marks: false

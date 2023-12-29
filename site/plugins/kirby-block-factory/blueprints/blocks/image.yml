@@ -1,0 +1,85 @@
+name: field.blocks.image.name
+icon: image
+preview: image
+fields:
+
+  image:
+    label: field.blocks.image.name
+    type: files
+    query: model.images
+    multiple: false
+    layout: cards
+    size: huge
+    image:
+      back: black
+    uploads:
+      template: blocks/image
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true
+    width: 2/6
+  caption_size:
+    label: Größe der Bildunterschrift
+    type: select
+    width: 2/6
+    options:
+      - looks-like-h000
+      - looks-like-h00
+      - looks-like-h0
+      - looks-like-h1
+      - looks-like-h2
+      - looks-like-h3
+      - looks-like-h4
+      - looks-like-h5
+      - looks-like-h6
+  link:
+    label: field.blocks.image.link
+    type: link
+    icon: url
+  ratio:
+    label: field.blocks.image.ratio
+    type: select
+    placeholder: Auto
+    width: 1/4
+    options:
+      15/7: "15:7"
+      16/9: "16:9"
+      5/3: "5:3"
+      3/2: "3:2"
+      10/12: "10:12"
+      3/4: "3:4"
+      2/3: "2:3"
+  image_height_mobile:
+    type: number
+    after: vh
+    label: Höhe in Mobile
+    width: 1/4
+  crop:
+    label: field.blocks.image.crop
+    type: toggle
+    width: 1/4
+  hide_on_mobile:
+    type: toggle
+    label: Bild in Mobile verstecken
+    width: 1/4
+    text:
+      - "nein"
+      - "ja"
+  padding_top:
+    label: Oben
+    type: text
+    width: 1/4
+  padding_right:
+    label: Rechts
+    type: text
+    width: 1/4
+  padding_bottom:
+    label: Unten
+    type: text
+    width: 1/4
+  padding_left:
+    label: Links
+    type: text
+    width: 1/4
