@@ -1095,42 +1095,14 @@ label.collapsible-row-label {
 
 /* @media (max-width: 1024px) */
 
-
+/* regular */
 .content-wrapper {
-  max-width: max(60vw, 1500px);
   margin: 0 auto;
   padding: 0px 20px;
+
+  /* this is the default content size, when nothing is set in kirby config */
+  max-width: max(60vw, 1500px);
   width: 90vw;
-}
-
-
-main .content-wrapper {
-
-}
-
-.content-wrapper.content-full-width {
-  /*max-width: 2200px;
-  width: 98vw;*/
-  max-width: 100%;
-  width: 100%;
-}
-
-.content-wrapper .row {
-}
-
-.content-wrapper.content-max {
-  max-width: 2200px;
-  width: 98vw;
-}
-
-/* we dont use this anymore */
-.content-wrapper.content-large {
-  max-width: 1700px;
-  width: 98vw;
-}
-
-.content-wrapper.content-small {
-  max-width: max(50vw, 1000px)
 }
 
 @media (max-width: 900px) {
@@ -1151,7 +1123,6 @@ main .content-wrapper {
 
 section {
   /* overflow: hidden; */
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;

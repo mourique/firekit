@@ -21,6 +21,9 @@
   <?= js('assets/js/loadeer.js', ['init' => true, 'defer' => true]) ?>
   <?= js('assets/js/keen-slider.js') ?>
 
+
+  <?= snippet('containersizes'); ?>
+
   <?= css('assets/css/grid.css') ?>
   <?= css('assets/css/keen-slider.css') ?>
   <?= css('assets/css/block-factory.css') ?>
@@ -29,30 +32,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Preload moused-over pages with https://fasterthanlight.net/ * https://github.com/weebney/tachyon -->
-  <script type="module" defer>/* tachyon 2.0.1 */
-    var e = document.body.dataset;
-    const o = "tachyonWhitelist" in e, n = "tachyonSameOrigin" in e, a = e.tachyonTimer || 50;
-    let r = null;
-
-    function i() {
-      r = r ? null : this;
-      const t = "tachyon";
-      var e = document.getElementById(t);
-      e ? e.remove() : setTimeout(() => {
-        var e;
-        r === this && ((e = document.createElement("link")).id = t, e.href = this.href, e.rel = "prerender", document.head.appendChild(e))
-      }, a)
-    }
-
-    function t(t) {
-      var e;
-      t.dataset && (e = "tachyon" in t.dataset, "A" !== t.tagName || !t.href || e != o && !n || n && !e && t.origin !== window.location.origin || ["mouseover", "mouseout", "touchstart", "touchend"].forEach(e => t.addEventListener(e, i, {passive: !0})))
-    }
-
-    new MutationObserver(e => e.forEach(e => e.addedNodes.forEach(t))).observe(document.body, {
-      childList: !0,
-      subtree: !0
-    }), document.querySelectorAll("a").forEach(t);</script>
+  <?= js('assets/js/tachyon.js', ['type' => 'module', 'defer' => true]) ?>
 </head>
 
 <body class="page-<?= $page->slug() ?>">

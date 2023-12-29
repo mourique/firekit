@@ -105,17 +105,9 @@ tabs:
                       text:
                         - "nein"
                         - "ja"
-                    contentwidth:
-                      type: toggles
+                    containersizes:
+                      extends: fields/containersizes
                       width: 1/2
-                      label: Breite des Inhalts
-                      options:
-                        content_regular: "Regular"
-                        content_small: "Small"
-                        content_max: "Max"
-                        content_full_width: "Full"
-                      default: content_regular
-
                     minheight:
                       type: text
                       label: Mindesthöhe der Sektion

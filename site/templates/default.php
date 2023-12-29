@@ -30,8 +30,8 @@
       <?php $bordertop = "" ?>
     <?php endif ?>
 
-    <?php if ($layout->contentwidth()->isNotEmpty()) : ?>
-      <?php $contentwidth = str_replace("_", "-", $layout->contentwidth()) ?>
+    <?php if ($layout->containersizes()->isNotEmpty()) : ?>
+      <?php $contentwidth = "content-" . str_replace("_", "-", $layout->containersizes()) ?>
     <?php else : ?>
       <?php $contentwidth = "" ?>
     <?php endif ?>
@@ -101,26 +101,12 @@
           <?php endforeach ?>
         </div>
 
-        <?php if ($layout->show_cta_button()->toBool()) : ?>
-          <div class="row">
-            <div class="col-xs-12 -centered">
-              <div class="blocks">
-                <div class="block block-button">
-                  <a href="<?= $layout->cta_button_link()->toURL() ?>"
-                     class="button "><?= $layout->cta_button_text() ?></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php endif; ?>
-
         <?php if ($layout->collapse_on_mobile()->toBool()) : ?>
           <label class="collapsible-row-label" for="toggle_<?= $layout_id ?>" data-href="#<?= $layout_id ?>">
             <span class="open">mehr lesen</span>
             <span class="close">zuklappen</span>
           </label>
         <?php endif; ?>
-
       </div>
 
       <?php if ($layout->backgroundimage()->isNotEmpty()) : ?>
