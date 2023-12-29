@@ -38,6 +38,7 @@ What is added:
   # for ftp (with passwort prompt)
   url = ftp://HOST:21/public_html/DOMAINNAME
 ```
+
 ## Content Backups 🔒
 
 - uses **cronjobs**
