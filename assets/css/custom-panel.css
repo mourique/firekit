@@ -1,3 +1,30 @@
+/* leave a bit of space between layouts (sections) to visually seperate them better */
 .k-layout:not(:last-of-type) {
-  margin-bottom: 21px;
+  margin-bottom: 0px;
+}
+
+.k-layout {
+  box-shadow:unset;
+}
+
+.k-grid.k-layout-columns {
+  border-top:1px solid #e0e0e0!important;
+  background: rgba(0,0,0,0.1);
+}
+
+.k-layout-column {
+  background: rgba(255,255,255,0.89);
+}
+
+.k-layout-column .k-blocks {
+  background:transparent;
+}
+
+.k-block-container {
+  background:transparent;
+}
+
+/* if i leave the label field blank it will collapse and look a bit cleaner*/
+header.k-field-header:has(label[title=""]  ) {
+  display:none;
 }

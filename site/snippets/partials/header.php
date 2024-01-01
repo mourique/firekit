@@ -24,6 +24,7 @@
 
   <?= snippet('containersizes'); ?>
 
+  <?= css('assets/css/variables.css') ?>
   <?= css('assets/css/grid.css') ?>
   <?= css('assets/css/keen-slider.css') ?>
   <?= css('assets/css/block-factory.css') ?>
@@ -48,7 +49,7 @@ endif;
 
 <header
   class="<?= $first_backgroundcolor ?>">
-  <div class="content-wrapper content-max">
+  <div class="content-wrapper content-regular">
     <nav>
       <a href="/" class="logo">
         🔥 Firekit

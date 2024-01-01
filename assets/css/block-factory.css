@@ -876,3 +876,40 @@ section.background-marina-blue .block-linklist a:after {
   }
 }
 
+/* button block */
+
+a.button,
+.formblock__submit input[type="submit"] {
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  text-align: center;
+  font-size: var(--step--2);
+  transition: 0.25s;
+  background: transparent;
+}
+
+.button:hover,
+.button:focus,
+.formblock__submit input[type="submit"]:hover,
+.formblock__submit input[type="submit"]:focus {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+a.button.-centered {
+  margin: 0 auto;
+}
+
+@media (max-width: 468px) {
+  .block-button {
+    display: flex;
+    justify-content: center;
+  }
+}

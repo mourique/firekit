@@ -23,7 +23,8 @@
   },
   "require": {
     "php": ">=8.0.0 <8.3.0",
-    "getkirby/cms": "^4.0"
+    "getkirby/cms": "^4.0",
+    "mauricerenck/pexelsimagefield": "^2.0"
   },
   "config": {
     "allow-plugins": {

@@ -45,17 +45,28 @@ tabs:
                   - form
                 settings:
                   fields:
-                    headline_decor:
-                      label: Farben & Hintergrundbild
+                    headline_color:
+                      label: Farben
                       type: headline
                     themecolors:
                       extends: fields/themecolors
                       width: 1/2
+                    colored_area:
+                      type: select
+                      width: 1/2
+                      default: color_section
+                      label: Welche Fläche
+                      options:
+                        color_section: "Sektion einfärben"
+                        color_row: "Nur Inhaltsbox einfärben"
+                    headline_bgimage:
+                      label: Hintergrundbild
+                      type: headline
                     backgroundimage:
                       label: Background image
                       type: files
                       label: Hintergrundbild
-                      width: 1/2
+                      width: 2/4
                     backgroundimage_position:
                       label: Position des Hintergrundbildes
                       type: select
@@ -68,7 +79,7 @@ tabs:
                     backgroundimage_vertical_position:
                       label: Vertikale Positionierung des Bildes
                       type: toggles
-                      width: 1/2
+                      width: 2/4
                       default: top
                       options:
                         - value: top
@@ -85,12 +96,36 @@ tabs:
                       type: headline
                     padding:
                       type: multiselect
-                      width: 1/3
+                      width: 1/2
                       label: Innenabstand
                       options:
                         top_padding: "Oben"
                         bottom_padding: "Unten"
                       default: top_padding, bottom_padding
+                    vertical_align:
+                      label: Vertikale Positionierung der Inhaltsblöcke
+                      type: toggles
+                      width: 1/2
+                      default: blocks-align-top
+                      labels: false
+                      options:
+                        - value: blocks-align-top
+                          text: Oben
+                          icon: align-top
+                        - value: blocks-align-center
+                          text: Mitte
+                          icon: align-vertically
+                        - value: blocks-align-bottom
+                          text: Unten
+                          icon: align-bottom
+                    containersizes:
+                      extends: fields/containersizes
+                      width: 1/3
+                    minheight:
+                      type: text
+                      label: Mindesthöhe der Sektion
+                      help: inkl. Einheit (px, %, vh, rem, etc.)
+                      width: 1/3
                     bordertop:
                       type: toggle
                       label: Linie über der Sektion
@@ -98,36 +133,24 @@ tabs:
                       text:
                         - "nein"
                         - "ja"
-                    verticalcenter:
-                      type: toggle
-                      label: Inhalt vertikal zentrieren
-                      width: 1/3
-                      text:
-                        - "nein"
-                        - "ja"
-                    containersizes:
-                      extends: fields/containersizes
-                      width: 1/2
-                    minheight:
-                      type: text
-                      label: Mindesthöhe der Sektion
-                      help: inkl. Einheit (px, %, vh, rem, etc.)
-                      width: 1/2
                     headline_mobile:
-                      label: Einstellungen für mobile Endgeräte
+                      label: Einstellungen für mobile Endgeräte 📱
                       type: headline
                     collapse_on_mobile:
                       type: toggle
-                      label: Sektion auf Mobilgeräten zusammenklappen
-                      width: 1/2
+                      label:
+                      width: 1/1
+                      text:
+                        - "Sektion auf Mobilgeräten zusammenklappen"
+                        - "Sektion auf Mobilgeräten zusammenklappen"
                     columns_as_sections_on_mobile:
                       type: toggle
-                      label: Behandel die Spalten wie einzelne Sektionen in Mobile (mehr Abstand)
+                      label:
                       help: wenn aktiviert, wird der Abstand auf mobile zwischen den Spalten genauso groß gemacht wie zwischen zwei Sektionen
                       text:
-                        - "nein"
-                        - "ja"
-                      width: 1/2
+                        - "Behandel die Spalten wie einzelne Sektionen in Mobile (mehr Abstand)"
+                        - "Behandel die Spalten wie einzelne Sektionen in Mobile (mehr Abstand)"
+                      width: 1/1
       sidebar:
         width: 1/4
         sections:
@@ -138,3 +161,13 @@ tabs:
           files:
             type: files
             label: Dateien auf dieser Seite
+          meta_fields:
+            type: fields
+            label: Weitere Inhalte
+            fields:
+              pexels:
+                type: pexels
+                label: Pexels
+          themepreview:
+            type: themepreview
+            label: Getting started

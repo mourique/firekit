@@ -2,7 +2,7 @@
 /kirby
 /vendor
 /site/plugins/*
-!/site/plugins/kirby-block-factory
+!/site/plugins/kirby-firekit
 /content
 
 # System files

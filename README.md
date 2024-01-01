@@ -16,8 +16,13 @@ What is added:
 - 🔤 typographic scale based on utopia.fyi
 - 🎨 programmatically defined themecolors and containersizes
 
+## To Do
+- [ ] put variables in own css file
+- [ ] find out if `overflow:hidden;` on `<section>` is a problem
+
 ## Create a new Project ➕
 `composer create-project mourique/firekit PROJECTNAME`
+> this does not work correctly yet because there is no stable release?
 
 ## Deployments 🔼
 

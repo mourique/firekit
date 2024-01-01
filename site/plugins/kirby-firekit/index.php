@@ -1,6 +1,64 @@
 <?php
-Kirby::plugin('ffeierabend/block-factory', [
+Kirby::plugin('felixf/firekit', [
+    'layoutMethods' => [
+        'section_id' => function () {
+            return "id" . substr(base_convert(md5($this->id()), 16, 32), 0, 12);
+        },
+        'section_styles' => function () {
+            $section_styles = [];
+            $section_styles[] = "--background-color:" . $this->themecolors() . ";";
 
+            $foreground_color = "";
+            $themecolors = option('themecolors');
+            $lowercase_layoutcolor = strtolower($this->themecolors()->toString());
+            $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'background'));
+            if ($config_color != "") :
+                $color = $themecolors[$config_color];
+                $color_name = "color-" . $color['name'];
+                $foreground_color = $color['foreground'];
+            endif;
+            $section_styles[] = "--color:" . $foreground_color . ";";
+
+            $minheightvar = "--section-min-height:";
+            if ($this->minheight()->isNotEmpty()) :
+                $section_styles[] = $minheightvar . $this->minheight() . ";";
+            else :
+                $section_styles[] = $minheightvar . "1fr 1fr" . ";";
+            endif;
+
+            return $section_styles;
+        },
+        'section_classes' => function () {
+            $section_classes = [];
+            $section_classes[] = $this->colored_area();
+            $section_classes[] = $this->vertical_align();
+
+            if ($this->backgroundimage()->isNotEmpty()) :
+                array_push($section_classes, "has-background-image");
+                $bgimgpos = "has-background-" . str_replace("_", "-", $this->backgroundimage_position());
+                array_push($section_classes, $bgimgpos);
+            endif;
+            if ($this->padding() == "top_padding") :
+                array_push($section_classes, "no-bottom-padding");
+            elseif ($this->padding() == "bottom_padding") :
+                array_push($section_classes, "no-top-padding");
+            endif;
+            if ($this->bordertop()->toBool()) :
+                array_push($section_classes, "border-on-top");
+            endif;
+            if ($this->containersizes()->isNotEmpty()) :
+                $contentwidth = "content-" . str_replace("_", "-", $this->containersizes());
+                array_push($section_classes, $contentwidth);
+            endif;
+            if ($this->columns_as_sections_on_mobile()->toBool()) :
+                array_push($section_classes, "column-spacing-like-section");
+            endif;
+            if ($this->colored_columns() == "colored_cols") :
+                array_push($section_classes, "blocks--boxed");
+            endif;
+            return $section_classes;
+        }
+    ],
     /*
         https://remixicon.com
         https://getkirby.com/docs/reference/plugins/extensions/icons

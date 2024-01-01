@@ -4,6 +4,24 @@ return [
     'panel' => [
         'css' => 'assets/css/custom-panel.css'
     ],
+    'thumbs' => [
+        'srcsets' => [
+            'default' => [
+                '300w' => ['width' => 300],
+                '600w' => ['width' => 600],
+                '900w' => ['width' => 900],
+                '1200w' => ['width' => 1200],
+                '1800w' => ['width' => 1800]
+            ],
+            'webp' => [
+                '300w' => ['width' => 300, 'format' => 'webp'],
+                '600w' => ['width' => 600, 'format' => 'webp'],
+                '900w' => ['width' => 900, 'format' => 'webp'],
+                '1200w' => ['width' => 1200, 'format' => 'webp'],
+                '1800w' => ['width' => 1800, 'format' => 'webp']
+            ],
+        ]
+    ],
     /* define the brand colors here, lowercase letters */
     'themecolors' => [
         ['name' => 'bordeaux',  'background' => '#CFDBD5',  'foreground' => '#333533' ],

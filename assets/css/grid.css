@@ -1005,11 +1005,17 @@
 
 
 @media (min-width: 900px) {
-  .content-wrapper > .row.vertically-centered {
+  .blocks-align-center .content-wrapper > .row{
     flex: 1;
     height: 100%;
     display: flex;
     align-items: center;
+  }
+  .blocks-align-bottom .content-wrapper > .row{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
   }
 }
 
@@ -1122,7 +1128,11 @@ label.collapsible-row-label {
 /* section */
 
 section {
-  /* overflow: hidden; */
+  /* this is needed for link and image slider, right side overflowing items, */
+  /* will it break something somewhere else, because i keep recommenting it */
+  overflow: hidden;
+
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -1130,6 +1140,22 @@ section {
   grid-row-gap: 0px;
   background-color: var(--background-color, #FFFFFF);
   color: var(--color, #000000);
+}
+
+section.color_row {
+  background-color:transparent;
+}
+
+section.color_row .row {
+  background-color: var(--background-color, #FFFFFF);
+  color: var(--color, #000000);
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  section.color_row .row {
+    padding: var(--colored-row-spacing);
+  }
 }
 
 section.has-background-image.has-background-right-half {
@@ -1202,7 +1228,7 @@ section .content-wrapper {
 
 
 main section:first-child > .row:first-child {
-  padding-top: var(--header-height)
+  padding-top: var(--header-height);
 }
 
 main section.no-top-padding:first-child .row:first-child {
@@ -1210,8 +1236,7 @@ main section.no-top-padding:first-child .row:first-child {
 }
 
 main section:first-child .content-wrapper {
-  padding-top: min(37vw, 200px);
-  padding-top: 200px;
+  padding-top: var(--first-section-top-padding);
 }
 
 main section.border-on-top .content-wrapper {

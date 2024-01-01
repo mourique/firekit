@@ -1,8 +1,11 @@
-panel.plugin("ffeierabend/block-factory", {
+panel.plugin("felixf/firekit", {
   icons: {
     'layout-row-line': '<path d="M19 11V5H5V11H19ZM19 13H5V19H19V13ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z" fill="currentColor"></path>',
     'layout-top-line': '<path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM4 10V19H20V10H4ZM4 8H20V5H4V8Z" fill="currentColor"></path>',
-    'layout-bottom-line': '<path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM4 16V19H20V16H4ZM4 14H20V5H4V14Z" fill="currentColor"></path>'
+    'layout-bottom-line': '<path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM4 16V19H20V16H4ZM4 14H20V5H4V14Z" fill="currentColor"></path>',
+    'align-top': '<path d="M3 3H21V5H3V3ZM8 11V21H6V11H3L7 7L11 11H8ZM18 11V21H16V11H13L17 7L21 11H18Z" fill="currentColor"></path>',
+    'align-vertically': '<path d="M3 11H21V13H3V11ZM18 18V21H16V18H13L17 14L21 18H18ZM8 18V21H6V18H3L7 14L11 18H8ZM18 6H21L17 10L13 6H16V3H18V6ZM8 6H11L7 10L3 6H6V3H8V6Z" fill="currentColor"></path>',
+    'align-bottom': '<path d="M3 19H21V21H3V19ZM8 13H11L7 17L3 13H6V3H8V13ZM18 13H21L17 17L13 13H16V3H18V13Z" fill="currentColor"></path>',
   },
   blocks: {
     text: {
@@ -39,9 +42,9 @@ panel.plugin("ffeierabend/block-factory", {
     heading: {
       computed: {
         textField() {
-        return this.field("heading", {
-          marks: true
-        });
+          return this.field("heading", {
+            marks: true
+          });
         }
       },
       methods: {
@@ -65,13 +68,13 @@ panel.plugin("ffeierabend/block-factory", {
     image: {
       computed: {
         captionMarks() {
-          return this.field("caption", { marks: true }).marks;
+          return this.field("caption", {marks: true}).marks;
         },
         crop() {
           return this.content.crop || false;
         },
         padding() {
-          return "padding-top: " + this.content.padding_top + "; padding-right: " + this.content.padding_right + "; padding-bottom: " + this.content.padding_bottom + "; padding-left: " + this.content.padding_left  || false;
+          return "padding-top: " + this.content.padding_top + "; padding-right: " + this.content.padding_right + "; padding-bottom: " + this.content.padding_bottom + "; padding-left: " + this.content.padding_left || false;
         },
         src() {
           if (this.content.location === "web") {
@@ -128,9 +131,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     datablock: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @click="open">
           <div v-if="content.datablocks.length">
@@ -144,9 +145,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     diashow: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @click="open">
           Diashow
@@ -154,9 +153,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     linklist: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @dblclick="open">
           <div v-if="content.list.length">
@@ -169,9 +166,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     logoticker: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @click="open">
           Logoticker
@@ -179,9 +174,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     imageslider: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @click="open">
           Imageslider
@@ -189,9 +182,7 @@ panel.plugin("ffeierabend/block-factory", {
       `
     },
     linkslider: {
-      computed: {
-
-      },
+      computed: {},
       template: `
         <div @click="open">
           <div class="linkslider_image"></div>
