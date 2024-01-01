@@ -53,11 +53,8 @@
 /* webfont ***********************************************************************/
 
 @font-face{
- font-family: 'Noe Text';
- src: url('../fonts/noe-text-semibold.eot');
- src: url('../fonts/noe-text-semibold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/noe-text-semibold.woff') format('woff'),
-      url('../fonts/noe-text-semibold.otf') format('opentype'); }
+ font-family: 'Merriweather';
+ src: url('../fonts/Merriweather-Regular.ttf');  }
 /* /end webfont  *****************************************************************/
 
 body {
