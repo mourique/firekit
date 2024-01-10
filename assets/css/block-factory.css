@@ -365,6 +365,11 @@ these make the slideshow work
 
 
 .block.block-diashow {
+  
+}
+
+.content-full .block.block-diashow {
+  margin-top:0px;
 }
 
 .block.block-diashow .fadein {

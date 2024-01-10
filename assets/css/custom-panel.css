@@ -8,7 +8,6 @@
 }
 
 .k-grid.k-layout-columns {
-  border-top:1px solid #e0e0e0!important;
   background: rgba(0,0,0,0.1);
 }
 
@@ -28,3 +27,4 @@
 header.k-field-header:has(label[title=""]  ) {
   display:none;
 }
+

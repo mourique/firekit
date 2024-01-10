@@ -998,6 +998,7 @@
   z-index: 2;
 }
 
+
 .row {
   /*	height:100%;*/
   /*overflow-x: hidden;*/
@@ -1111,18 +1112,18 @@ label.collapsible-row-label {
   width: 90vw;
 }
 
+.content-full .content-wrapper{
+  padding:0px;
+}
+
 @media (max-width: 900px) {
   .content-wrapper {
     width: 100% !important;
   }
 }
 
-/*.content-wrapper .block + .block {
-	margin-top: var(--step-1);
-}*/
-
 .content-wrapper .block {
-  margin-bottom: var(--block-spacing);
+	margin-top: var(--block-spacing);
 }
 
 /* section */

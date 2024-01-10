@@ -24,10 +24,26 @@ return [
     ],
     /* define the brand colors here, lowercase letters */
     'themecolors' => [
-        ['name' => 'bordeaux',  'background' => '#CFDBD5',  'foreground' => '#333533' ],
-        ['name' => 'magnolia',  'background' => '#E8EDDF',  'foreground' => '#444444' ],
-        ['name' => 'sparrow',  'background' => '#242423',  'foreground' => '#E8EDDF' ],
-        ['name' => 'carbon',    'background' => '#F5CB5C',  'foreground' => '#242423' ]
+        [
+            'name' => 'bordeaux',
+            'background' => '#CFDBD5',
+            'foreground' => '#333533'
+        ],
+        [
+            'name' => 'magnolia',
+            'background' => '#E8EDDF',
+            'foreground' => '#444444'
+        ],
+        [
+            'name' => 'sparrow',
+            'background' => '#242423',
+            'foreground' => '#E8EDDF'
+        ],
+        [
+            'name' => 'carbon',
+            'background' => '#F5CB5C',
+            'foreground' => '#242423'
+        ]
     ],
     /* define the width of content here, well be used in kirby panel and in css */
     'containersizes' => [

@@ -12,6 +12,7 @@
 body {
   margin: 0;
   padding: 0;
+
 }
 
 html, body {
@@ -221,6 +222,23 @@ header {
   padding: var(--step-0);
 }
 
+header a {
+  text-decoration:none;
+}
+
+header .content-wrapper {
+  display:flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-family: 'Merriweather';
+  font-size: 150%;
+}
+
 @media (min-width: 1025px) {
   header.scrolled {
     background-color: white;
@@ -231,3 +249,151 @@ header {
     box-shadow: 0px 7px 9px #00000029;
   }
 }
+
+
+header nav {
+  display:flex;
+  gap: 20px;
+}
+
+/* mobile */
+
+
+#main-menu { display:none;}
+  header label#menu-button {
+    display: none;  
+  }
+@media screen and (max-width: 768px) {
+
+  header nav {
+    opacity: 0;
+    border: 1px solid #dddddd;
+
+    overflow: hidden;
+    background: white;
+    position: absolute;
+    display: flex;
+    right: 20px;
+    top: 50px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: 240ms ease-in-out opacity;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  }
+
+  #main-menu:checked ~ nav {
+    opacity: 1;
+  }
+
+  header label#menu-button {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    border: 1px solid #dddddd;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    position: sticky;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  header label#menu-button span.menu-text {
+    line-height: 1;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    left: -100vw;
+
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+  }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  height: 1rem;
+}
+
+
+  .hamburger:hover {
+    opacity: 0.7; }
+  .hamburger.is-active:hover {
+    opacity: 0.7; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000; }
+
+.hamburger-box {
+  width: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  margin-top: -9px; }
+
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 1rem;
+    background-color: #000;
+    position: absolute;
+    height:1px;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block;
+      height: 1.5px;
+}
+  .hamburger-inner::before {
+    top: -6px; }
+  .hamburger-inner::after {
+    bottom: -6px; }
+
+/*
+   * Squeeze
+   */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+  .hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+  .hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+

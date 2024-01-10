@@ -42,6 +42,9 @@ Kirby::plugin('felixf/firekit', [
                 array_push($section_classes, "no-bottom-padding");
             elseif ($this->padding() == "bottom_padding") :
                 array_push($section_classes, "no-top-padding");
+            elseif ($this->padding() == "") :
+                array_push($section_classes, "no-top-padding");
+                array_push($section_classes, "no-bottom-padding");
             endif;
             if ($this->bordertop()->toBool()) :
                 array_push($section_classes, "border-on-top");

@@ -133,7 +133,7 @@ panel.plugin("felixf/firekit", {
     datablock: {
       computed: {},
       template: `
-        <div @click="open">
+        <div @dblclick="open">
           <div v-if="content.datablocks.length">
             <div v-for="(item, index) in content.datablocks" class="datablock-item" :key="index">
               <div class="datablock-headline">{{ item.headline }}</div>
