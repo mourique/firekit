@@ -397,3 +397,60 @@ header nav {
     transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 
+/* accordion block */
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid currentColor;
+}
+.accordion__intro {
+  position: relative;
+  padding: 20px 0 ;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.25s ease-out;
+  opacity: 0;
+}
+.accordion h4,
+.accordion p {
+  margin: 0;
+  line-height: 1;
+}
+
+.accordion span {
+  font-weight: bold;
+  max-width: calc(100% - 55px);
+}
+
+.accordion p {
+  margin: 0;
+  padding-bottom: 20px;
+}
+.accordion__active .accordion__content {
+  opacity: 1;
+}
+
+.accordion__intro:after {
+  content: "+";
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid currentColor;
+  border-radius: 9999px;
+  line-height:20px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.accordion__intro:after {
+  content: "-";
+}

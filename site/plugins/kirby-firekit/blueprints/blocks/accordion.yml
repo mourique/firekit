@@ -1,0 +1,12 @@
+name: field.blocks.accordion.name
+icon: bars
+fields:
+  summary:
+    label: Summary
+    type: writer
+    marks: false
+    placeholder: Enter summary…
+  details:
+    label: Detail
+    type: writer
+    marks: true

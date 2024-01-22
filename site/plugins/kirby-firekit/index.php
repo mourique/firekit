@@ -87,6 +87,8 @@ Kirby::plugin('felixf/firekit', [
         'blocks/imageslider' => __DIR__ . '/blueprints/blocks/imageslider.yml',
         'blocks/linkslider' => __DIR__ . '/blueprints/blocks/linkslider.yml',
         'blocks/pagination' => __DIR__ . '/blueprints/blocks/pagination.yml',
+        'blocks/accordion' => __DIR__ . '/blueprints/blocks/accordion.yml'
+
         // more blueprints
     ],
     'snippets' => [
@@ -103,6 +105,7 @@ Kirby::plugin('felixf/firekit', [
         'blocks/quote' => __DIR__ . '/snippets/blocks/quote.php',
         'blocks/list' => __DIR__ . '/snippets/blocks/list.php',
         'blocks/pagination' => __DIR__ . '/snippets/blocks/pagination.php',
+        'blocks/accordion' => __DIR__ . '/snippets/blocks/accordion.php'
         // more snippets
     ],
     'translations' => [
@@ -118,6 +121,7 @@ Kirby::plugin('felixf/firekit', [
             'field.blocks.imageslider.name' => 'Imageslider',
             'field.blocks.linkslider.name' => 'Linkslider',
             'field.blocks.pagination.name' => 'Pagination',
+            'field.blocks.accordion.name' => 'Accordion',
             // more block names
         ],
         'de' => [
@@ -130,7 +134,8 @@ Kirby::plugin('felixf/firekit', [
             'field.blocks.logoticker.name' => 'Logoticker',
             'field.blocks.imageslider.name' => 'Imageslider',
             'field.blocks.linkslider.name' => 'Linkslider',
-            'field.blocks.pagination.name' => 'Seitenlinks',
+            'field.blocks.pagination.name' => 'Pagination',
+            'field.blocks.accordion.name' => 'Accordion',
             // more block names
 
         ],

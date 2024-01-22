@@ -190,6 +190,44 @@ panel.plugin("felixf/firekit", {
           <div class="linkslider_image"></div>
         </div>
       `
+    },
+    accordion: {
+      computed: {
+        summaryField() {
+          return this.field("summary");
+        },
+        detailsField() {
+          return this.field("details");
+        }
+      },
+      template: `
+        <div>
+          <details>
+            <summary>
+                <summary-content>
+              <k-writer
+                ref="summary"
+                :inline="true"
+                marks="false"
+                :placeholder="summaryField.placeholder || 'Add a summary…'"
+                :value="content.summary"
+                @input="update({ summary: $event })"
+              />
+              </summary-content>
+            </summary>
+            <details-content>
+            <k-writer
+                ref="details"
+                :inline="detailsField.inline || false"
+                :marks="detailsField.marks"
+                :value="content.details"
+                :placeholder="detailsField.placeholder || 'Add some details'"
+                @input="update({ details: $event })"
+              />
+              </details-content>
+          </details>
+        </div>
+      `
     }
     // more blocks
   }

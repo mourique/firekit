@@ -42,7 +42,7 @@ tabs:
                   - imageslider
                   - linkslider
                   - pagination
-                  - form
+                  - accordion
                 settings:
                   fields:
                     headline_color:

@@ -264,3 +264,21 @@
   align-items: center;
 }
 
+
+/* block accordion */
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+details summary::marker {
+  font-size: 150%;
+}
+
+details summary > * {
+  display: inline-block;
+  width: auto;
+  max-width: calc(100% - 20px);
+}
+
