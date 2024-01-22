@@ -1,6 +1,6 @@
 /* leave a bit of space between layouts (sections) to visually seperate them better */
 .k-layout:not(:last-of-type) {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .k-layout {
