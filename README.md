@@ -4,6 +4,7 @@ This is my boilerplate for KirbyCMS based on plainkit with everything i need for
 
 What is added: 
 - 📁 /assets folder with scripts.js and styles.css
+- 📁 /data folder with /runtime and /storage to separate persistent and non-persisten content from the code (from tobimori/kirby-baukasten)
 - 🗃️ /partials for header and footer
 - 💀 HTML Skeleton
 - 🦶 sticky footer css

@@ -2,7 +2,7 @@
 
 <?php /** @var \Kirby\Cms\Block $block */ ?>
 <blockquote>
-    <?= $site->resolveUUIDS($block->text()->toHtml()); ?>
+    <?= $block->text()->toHtml(); ?>
   <?php if ($block->citation()->isNotEmpty()): ?>
   <footer>
     <?= $block->citation() ?>

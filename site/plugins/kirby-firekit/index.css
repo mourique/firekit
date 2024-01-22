@@ -55,6 +55,27 @@
 	font-weight: 700;
 }
 
+.k-block-type-heading-input {
+  display: grid;
+  grid-template-columns:1fr 50px;
+  grid-template-rows: 1rem 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "subline levels"
+    "heading levels";
+  padding-top: 5px;
+}
+.k-block-type-heading-levels { grid-area: levels; }
+.k-block-type-heading-subline {
+  font-size: 60%;
+  grid-area: subline;
+  padding-top:10px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.k-block-type-heading-text { grid-area: heading; }
+
+
 /* block image */
 .k-block-type-image .k-block-figure-container {
 	display: block;
@@ -221,6 +242,7 @@
 .k-block-type-logoticker {
 	background: #DDD;
 	height: 100%;
+  min-height: 75px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

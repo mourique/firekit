@@ -41,8 +41,30 @@ panel.plugin("felixf/firekit", {
     },
     heading: {
       computed: {
+        isSplitable() {
+          return (
+            this.content.text.length > 0 &&
+            this.$refs.input.isCursorAtStart === false &&
+            this.$refs.input.isCursorAtEnd === false
+          );
+        },
+        keys() {
+          return {
+            Enter: () => {
+              if (this.$refs.input.isCursorAtEnd === true) {
+                return this.$emit("append", "text");
+              }
+
+              return this.split();
+            },
+            "Mod-Enter": this.split
+          };
+        },
+        levels() {
+          return this.field("level", {options: []}).options;
+        },
         textField() {
-          return this.field("heading", {
+          return this.field("text", {
             marks: true
           });
         }
@@ -54,14 +76,33 @@ panel.plugin("felixf/firekit", {
       },
       template: `
         <div :data-level="content.level" :data-size="content.size" :data-centered="content.centered" class="k-block-type-heading-input">
-          <k-writer
+     <k-writer
             ref="input"
-            :inline="true"
+            class="k-block-type-heading-subline"
+            :inline="false"
             :marks="textField.marks"
             :placeholder="textField.placeholder"
+            :value="content.subline"
+            @input="update({ subline: $event })"
+          />
+          <k-writer
+            ref="input"
+            class="k-block-type-heading-text"
+            :inline="true"
+            :marks="textField.marks"
             :value="content.text"
             @input="update({ text: $event })"
           />
+          <k-input
+			      v-if="levels.length > 1"
+			      ref="level"
+			      :empty="false"
+			      :options="levels"
+			      :value="content.level"
+			      type="select"
+			      class="k-block-type-heading-level"
+			      @input="update({ level: $event })"
+		      />
         </div>
         `
     },
@@ -147,7 +188,7 @@ panel.plugin("felixf/firekit", {
     diashow: {
       computed: {},
       template: `
-        <div @click="open">
+        <div @dblclick="open">
           Diashow
         </div>
       `
@@ -176,7 +217,7 @@ panel.plugin("felixf/firekit", {
     imageslider: {
       computed: {},
       template: `
-        <div @click="open">
+        <div @dblclick="open">
           Imageslider
         </div>
       `

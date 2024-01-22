@@ -38,7 +38,6 @@ fields:
     text:
       - "nein"
       - "ja"
-
   sticky:
     label: Sticky
     type: toggle
@@ -60,3 +59,8 @@ fields:
     width: 1/1
     placeholder: field.blocks.heading.placeholder
     help: Vertikalen Strich | verwenden, um eine Silbentrennung vorzugeben.
+  subline:
+    type: writer
+    inline: true
+    width: 1/1
+    placeholder: field.blocks.heading.placeholder
