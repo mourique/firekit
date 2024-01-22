@@ -15,6 +15,7 @@ What is added:
 - 🖼️ lazyloading images with srcset and sizes
 - 🔤 typographic scale based on utopia.fyi
 - 🎨 programmatically defined themecolors and containersizes
+- 📱 simple mobile navigation (with checkbox hack)
 
 ## To Do
 - [ ] put variables in own css file

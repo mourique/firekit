@@ -58,7 +58,7 @@ endif;
 <span class="menu-text">
         Menü
       </span>
-                <div class="hamburger hamburger--squeeze">
+        <div class="hamburger hamburger--squeeze">
           <div class="hamburger-box">
             <div class="hamburger-inner"></div>
           </div>

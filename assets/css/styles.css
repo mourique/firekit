@@ -261,7 +261,7 @@ header nav {
 
 #main-menu { display:none;}
   header label#menu-button {
-    display: none;  
+    display: none;
   }
 @media screen and (max-width: 768px) {
 
