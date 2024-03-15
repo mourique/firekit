@@ -1,6 +1,6 @@
 <?php
 
-$containersizes = option('containersizes');
+$containersizes = option('felixf.firekit.containersizes');
 
 $sizes = [];
 

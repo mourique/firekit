@@ -1,11 +1,11 @@
 <?php
 
-$themecolors = option('themecolors');
+$themecolors = option('felixf.firekit.themecolors');
 
 $colors = [];
 
 foreach ($themecolors as $color) {
-    $colors[$color['name']] = $color['background'];
+    $colors[$color['name']] = $color['first-back'];
 };
 
 $field = [
