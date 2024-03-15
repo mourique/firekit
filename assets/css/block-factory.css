@@ -364,8 +364,12 @@ these make the slideshow work
 */
 
 
-.block.block-diashow {
-  
+
+
+
+
+/*.block.block-diashow {
+
 }
 
 .content-full .block.block-diashow {
@@ -430,7 +434,7 @@ these make the slideshow work
     height: var(--image_height_mobile);
     object-fit: cover;
   }
-}
+}*/
 
 /***
  *
