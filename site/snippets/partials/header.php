@@ -24,8 +24,10 @@
 
   <?= snippet('containersizes'); ?>
 
+  <?= css('assets/css/normalize.css') ?>
   <?= css('assets/css/variables.css') ?>
   <?= css('assets/css/grid.css') ?>
+  <?= css('assets/css/header.css') ?>
   <?= css('assets/css/keen-slider.css') ?>
   <?= css('assets/css/block-factory.css') ?>
   <?= css('assets/css/styles.css') ?>
