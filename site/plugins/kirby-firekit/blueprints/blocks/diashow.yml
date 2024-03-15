@@ -18,15 +18,32 @@ fields:
       10/12: "10:12"
       3/4: "3:4"
       2/3: "2:3"
-  image_height_mobile:
+  mobile_aspect_ratio:
+    type: select
+    label: Seitenverhältnis der Bilder auf Mobilgeräten
+    help: (unter 768px Breite)
     width: 1/2
-    type: number
-    after: vh
-    label: Höhe in Mobile
-    width: 1/2
+    options:
+      15/7: "15:7"
+      16/9: "16:9"
+      5/3: "5:3"
+      3/2: "3:2"
+      10/12: "10:12"
+      3/4: "3:4"
+      2/3: "2:3"
   only_on_hover:
     type: toggle
+    width: 1/2
     label: Diashow nur abspielen, wenn man mit der Maus drüberfährt
     text:
       - "nein"
       - "ja"
+  duration:
+    type: number
+    label: Dauer
+    default: 1000
+    after: ms
+    help: Länge eines Bildes in Millisekunden
+    width: 1/2
+    when:
+      only_on_hover: false

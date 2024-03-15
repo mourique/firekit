@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0898721096070e9c898a0e792080d5b",
+    "content-hash": "2d46db7e19da9daefc1e075c4d70f12c",
     "packages": [
         {
             "name": "christian-riesen/base32",
@@ -389,16 +389,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "4.0.2",
+            "version": "4.1.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "ba8e9e511d797c0c2bc9278d5484020c4aa8cfce"
+                "reference": "575f08131926189944d2c39fbcc7693deb9d1c4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/ba8e9e511d797c0c2bc9278d5484020c4aa8cfce",
-                "reference": "ba8e9e511d797c0c2bc9278d5484020c4aa8cfce",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/575f08131926189944d2c39fbcc7693deb9d1c4e",
+                "reference": "575f08131926189944d2c39fbcc7693deb9d1c4e",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +488,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-12-19T14:29:43+00:00"
+            "time": "2024-01-26T14:10:55+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -1424,6 +1424,54 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "srwiez/thumbhash",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SRWieZ/thumbhash.git",
+                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
+                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "ext-imagick": "*",
+                "pestphp/pest": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Thumbhash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eser DENIZ",
+                    "email": "srwiez@gmail.com"
+                }
+            ],
+            "description": "A brief description of your package",
+            "support": {
+                "issues": "https://github.com/SRWieZ/thumbhash/issues",
+                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.2.1"
+            },
+            "time": "2024-02-11T11:22:22+00:00"
+        },
+        {
             "name": "symfony/deprecation-contracts",
             "version": "v3.4.0",
             "source": {
@@ -1899,6 +1947,61 @@
             "time": "2023-11-06T11:00:25+00:00"
         },
         {
+            "name": "tobimori/kirby-thumbhash",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tobimori/kirby-thumbhash.git",
+                "reference": "7eee10b73472fe4e1f85e928e73cf657f8330ec3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tobimori/kirby-thumbhash/zipball/7eee10b73472fe4e1f85e928e73cf657f8330ec3",
+                "reference": "7eee10b73472fe4e1f85e928e73cf657f8330ec3",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "php": ">=8.0.0",
+                "srwiez/thumbhash": "^1.1"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.8"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "tobimori\\": "classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Möritz",
+                    "email": "tobias@moeritz.io"
+                }
+            ],
+            "description": "Kirby Image placeholders with the smarter ThumbHash integration",
+            "homepage": "https://github.com/tobimori/kirby-thumbhash#readme",
+            "support": {
+                "issues": "https://github.com/tobimori/kirby-thumbhash/issues",
+                "source": "https://github.com/tobimori/kirby-thumbhash/tree/1.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tobimori",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-10-18T13:22:30+00:00"
+        },
+        {
             "name": "webeweb/core-library",
             "version": "v8.81.0",
             "source": {
@@ -2079,12 +2182,14 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "getkirby/cms": 5
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.0.0 <8.3.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

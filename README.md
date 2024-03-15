@@ -13,7 +13,7 @@ What is added:
 - 🔒 conditional BASIC AUTH and https://www
 - 🖌️ predefined layouts with common functions
 - 🗳️ custom blocks with mourique/kirby-blocks-factory
-- 🖼️ lazyloading images with srcset and sizes
+- 🖼️ lazyloading images with srcset and sizes (via thumbhash by tobimori and unlazy.js by johannes shoepplich)
 - 🔤 typographic scale based on utopia.fyi
 - 🎨 programmatically defined themecolors and containersizes
 - 📱 simple mobile navigation (with checkbox hack)

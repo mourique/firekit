@@ -304,3 +304,21 @@ details summary > * {
   max-width: calc(100% - 20px);
 }
 
+/*
+try to create hoverable help text in panel
+.k-column {
+  position: relative;
+}
+
+.k-help.k-field-help.k-text {
+  position: absolute;
+  top: 23px;
+  background-color: black;
+  color: white;
+  padding-inline: 3px;
+  border-radius: 3px;
+  left: -10px;
+  display:none;
+}
+
+.k-field-header .k-label.k-field-label:hover {}*/

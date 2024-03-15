@@ -9,8 +9,8 @@
     $ratio = $block->ratio()->or('auto');
     $image_height_mobile = $block->image_height_mobile()->or('auto');
     $src = null;
-    $sizes = "(min-width: 1125px) calc(" . round(100 / (12 / $column->span()), 0) . "vw),
-              100vw";
+/*    $sizes = "(min-width: 1125px) calc(" . round(100 / (12 / $column->span()), 0) . "vw),
+              100vw";*/
     if ($block->location() == 'web') {
         $src = $block->src()->esc();
     } elseif ($image = $block->image()->toFile()) {
@@ -26,28 +26,11 @@
             <?php if ($link->isNotEmpty()): ?><a href="<?= Str::esc($link->toUrl()) ?>"><?php endif; ?>
 
                 <div class="img-wrapper" style="--image-height-mobile: <?= $image_height_mobile ?>vh">
-                    <picture>
-                        <source
-                                data-srcset="<?= $image->srcset('webp') ?>"
-                                sizes="<?= $sizes ?>"
-                                type="image/webp"
-                                data-lazyload
-                        >
-                        <img
-                                style="--aspect-ratio:<?= $ratio ?>;"
-                                src="<?= $image->placeholderUri() ?>"
-                                data-src="<?= $image->resize(400)->url() ?>"
-                                data-lazyload
-                                decoding="async"
-                                data-srcset="<?= $image->srcset() ?>"
-                                sizes="<?= $sizes ?>"
-                                data-sizes="auto"
-                                width="<?= $image->resize(1800)->width() ?>"
-                                height="<?= $image->resize(1800)->height() ?>"
-                                alt="<?= $alt->esc() ?>"
-                        >
-                    </picture>
-
+                    <?= snippet('partials/modern_image_tag', [
+                            "image" => $image,
+                            "column_span" => $column->span(),
+                            "ratio" => $ratio,
+                            "dont_be_lazy" => "false" ]); ?>
                 </div>
 
                 <?php if ($caption->isNotEmpty()): ?>

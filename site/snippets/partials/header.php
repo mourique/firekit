@@ -18,21 +18,32 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image:alt" content="image description">
 
+
   <?= js('assets/js/loadeer.js', ['init' => true, 'defer' => true]) ?>
   <?= js('assets/js/keen-slider.js') ?>
 
-
   <?= snippet('containersizes'); ?>
 
+  <?= snippet('dynamic_css'); // injects styles based on config.php  ?>
+
+  <?php
+    // loop through all available blocks defined in config and load respective css
+    $available_blocks = option('felixf.firekit.blocks');
+    foreach ($available_blocks as $block) :
+      echo css('media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
+    endforeach;
+  ?>
   <?= css('assets/css/normalize.css') ?>
   <?= css('assets/css/variables.css') ?>
   <?= css('assets/css/grid.css') ?>
   <?= css('assets/css/header.css') ?>
   <?= css('assets/css/keen-slider.css') ?>
-  <?= css('assets/css/block-factory.css') ?>
+  <?php // css('assets/css/block-factory.css') ?>
   <?= css('assets/css/styles.css') ?>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <?= js('assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images  ?>
 
   <!-- Preload moused-over pages with https://fasterthanlight.net/ * https://github.com/weebney/tachyon -->
   <?= js('assets/js/tachyon.js', ['type' => 'module', 'defer' => true]) ?>
@@ -40,11 +51,19 @@
 
 <body class="page-<?= $page->slug() ?>">
 <?php
+$first_backgroundcolor = "transparent";
 $layouts = $page->layout()->toLayouts();
-$first_backgroundcolor = 'transparent';
 if ($layouts->isNotEmpty()) :
-  if ($layouts->first()->backgroundcolor()->isNotEmpty()) :
-    $first_backgroundcolor = $page->layout()->toLayouts()->first()->backgroundcolor();
+  $themecolors = option('felixf.firekit.themecolors');
+  $lowercase_layoutcolor = strtolower($layouts->first()->themecolors()->toString());
+  $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'first-back'));
+  /*$layouts->first()->colored_area();
+  */
+  $layouts->first()->element_styles('section');
+
+  if ($config_color != "") :
+    $color = $themecolors[$config_color];
+    $first_backgroundcolor = $layouts->first()->colored_area() . "-" . $color['name'];
   endif;
 endif;
 ?>
@@ -57,9 +76,7 @@ endif;
     <?php if ($items->isNotEmpty()): ?>
       <label id="menu-button" for="main-menu">
 
-<span class="menu-text">
-        Menü
-      </span>
+      <span class="menu-text"> Menü</span>
         <div class="hamburger hamburger--squeeze">
           <div class="hamburger-box">
             <div class="hamburger-inner"></div>
@@ -76,3 +93,4 @@ endif;
     <?php endif ?>
   </div>
 </header>
+

@@ -1,10 +1,10 @@
 <?php
 
+define("KIRBY_HELPER_DUMP", false); // dump() is set by Laravel Herd
+
 use Kirby\Cms\App;
 
 //define("KIRBY_HELPER_ATTR", false); // attr is set by tailwind-merge
-//define("KIRBY_HELPER_DUMP", false); // dump is set by ray
-
 
 $base = dirname(__DIR__ ); // this should not have to have a path here?
 
