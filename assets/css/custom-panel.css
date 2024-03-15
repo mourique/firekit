@@ -28,3 +28,16 @@ header.k-field-header:has(label[title=""]  ) {
   display:none;
 }
 
+.k-column {
+  position: relative;
+}
+
+.k-help.k-field-help.k-text {
+  position: absolute;
+  top: 23px;
+  background-color: black;
+  color: white;
+  padding-inline: 3px;
+  border-radius: 3px;
+  left: -10px;
+}
