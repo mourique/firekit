@@ -30,7 +30,7 @@
     // loop through all available blocks defined in config and load respective css
     $available_blocks = option('felixf.firekit.blocks');
     foreach ($available_blocks as $block) :
-      echo css('/media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
+      echo css('media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
     endforeach;
   ?>
   <?= css('/assets/css/normalize.css') ?>
