@@ -1,0 +1,106 @@
+/***
+ *
+ *    88           88                           88             88
+ *    88           88                           88             ""
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8       88  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYb,d8   ,adPPYba,
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"        88  88P'   "88"    "8a  ""     `Y8  a8"    `Y88  a8P_____88
+ *    88       d8  88  8b       d8  8b          8888[          88  88      88      88  ,adPPPPP88  8b       88  8PP"""""""
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,       88  88      88      88  88,    ,88  "8a,   ,d88  "8b,   ,aa
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a      88  88      88      88  `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'
+ *                                                                                                  aa,    ,88
+ *                                                                                                   "Y8bbdP"
+ *
+ *
+<div class="block block-image ">
+  <figure data-ratio="auto" style="--padding-top:; --padding-right:; --padding-bottom:; --padding-left:; --margin-top:; --margin-right:20%; --margin-bottom:; --margin-left:;">
+    <div class="img-wrapper" style="--image-height-mobile: autovh">
+      <picture>
+        <source sizes="(min-width: 1125px) calc(50vw), 100vw" type="image/webp" data-lazyload="" srcset="https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-300x.webp 300w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-600x.webp 600w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-900x.webp 900w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-1200x.webp 1200w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-1800x.webp 1800w">
+        <img style="--aspect-ratio:auto;" src="https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-400x.jpg" data-lazyload="" decoding="async" sizes="1469px" data-sizes="auto" width="1469" height="1685" alt="" srcset="https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-300x.jpg 300w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-600x.jpg 600w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-900x.jpg 900w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-1200x.jpg 1200w, https://ssln.test/media/pages/home/a379ab09a4-1703854057/ein-deutschlandticket-wird-mit-der-eticket-app-gescannt-und-ausgewertet-1800x.jpg 1800w">
+      </picture>
+    </div>
+  </figure>
+</div>
+ *
+ */
+
+.content-wrapper .block.block-image figure {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1;
+  overflow: hidden;
+  background: transparent;
+}
+
+
+.content-wrapper .block.block-image figure img {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  transition: 340ms transform ease-in-out;
+  display: block;
+  aspect-ratio: var(--aspect-ratio);
+  object-fit: cover;
+}
+
+figcaption {
+  font-size: var(--step--1);
+  margin-top: 0.3em !important;
+}
+
+/* TODO: switch aspect ratio on portrait */
+@media (orientation: portrait) {
+  .block.block-image figure .img-wrapper {
+    height: var(--image-height-mobile);
+  }
+}
+
+
+/* image with a link */
+.block-image figure a {
+  display: block;
+  text-decoration: none;
+}
+
+.block-image figure a:hover figcaption {
+  text-decoration: underline;
+}
+
+.block-image figure a:hover img {
+  transform: scale(1.02);
+}
+
+/* custom padding and margin, only for bigger screens */
+@media (min-width: 900px) {
+  .content-wrapper .block.block-image figure {
+    padding-top: var(--padding-top);
+    padding-right: var(--padding-right);
+    padding-bottom: var(--padding-bottom);
+    padding-left: var(--padding-left);
+
+    margin-top: var(--margin-top);
+    margin-right: var(--margin-right);
+    margin-bottom: var(--margin-bottom);
+    margin-left: var(--margin-left);
+  }
+}
+
+
+.block-image figure a {
+  display: block;
+  text-decoration: none;
+}
+
+.block-image figure a:hover figcaption {
+  text-decoration: underline;
+}
+.block-image figure a:hover img {
+  transform: scale(1.02);
+}
+
+figcaption {
+  text-align: right;
+  margin-right: 0.5rem;
+}

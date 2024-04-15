@@ -1,0 +1,25 @@
+.pagination-link {
+  aspect-ratio: 16/4;
+  background-color: var(--foreground-color);
+  color: var(--background-color)!important;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: var(--step-2);
+  display:flex;
+  align-items: flex-end;
+  padding-left: 1.5rem;
+  transition: 140ms ease-in-out all;
+}
+
+.next-link.pagination-link {
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+
+.pagination-link:hover {
+  padding: 1rem;
+}
+
+
+
+

@@ -1,0 +1,85 @@
+.block.block-button {
+  display: flex;
+}
+
+a.button,
+.formblock__submit input[type="submit"] {
+  background-color: transparent;
+  color:            var(--first-front);
+  border: 2px solid var(--first-front);
+
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
+  font-size: var(--step-0);
+  transition: 0.15s;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  a.button,
+  .formblock__submit input[type="submit"] {
+    width: 100%;
+  }
+}
+
+a.button:hover,
+a.button:focus,
+.formblock__submit input[type="submit"]:hover,
+.formblock__submit input[type="submit"]:focus {
+  background-color: var(--first-front);
+  color:            var(--first-back);
+  border: 2px solid var(--first-front);
+
+  cursor: pointer;
+  transform: scale(1.04);
+}
+
+/* double background colors (section+row or section+cols) */
+.colored_section[class*=" colored_"] a.button,
+.colored_section[class*=" colored_"] a.button,
+.colored_section[class*=" colored_"] .formblock__submit input[type="submit"],
+.colored_section[class*=" colored_"] .formblock__submit input[type="submit"] {
+  background-color: var(--second-back);
+  color:            var(--second-front);
+  border: 2px solid var(--second-front);
+}
+
+/* double background colors (section+row or section+cols) */
+.colored_section[class*=" colored_"] a.button:hover,
+.colored_section[class*=" colored_"] a.button:focus,
+.colored_section[class*=" colored_"] .formblock__submit input[type="submit"]:hover,
+.colored_section[class*=" colored_"] .formblock__submit input[type="submit"]:focus {
+  background-color: var(--second-front);
+  color:            var(--second-back);
+  border: 2px solid var(--second-front);
+}
+
+a.button:active {
+  transform: translateY(2px);
+}
+
+/* buttons inside floating_box
+ * floating box is always third colorpair
+*/
+
+/* double background colors (section+row or section+cols) */
+.floating_box a.button,
+.floating_box a.button,
+.floating_box .formblock__submit input[type="submit"],
+.floating_box .formblock__submit input[type="submit"] {
+  background-color: transparent;
+  color:            var(--third-front);
+  border: 2px solid var(--third-front);
+}
+
+/* double background colors (section+row or section+cols) */
+.floating_box a.button:hover,
+.floating_box a.button:focus,
+.floating_box .formblock__submit input[type="submit"]:hover,
+.floating_box .formblock__submit input[type="submit"]:focus {
+  background-color: var(--third-front);
+  color:            var(--third-back);
+  border: 2px solid var(--third-front);
+}

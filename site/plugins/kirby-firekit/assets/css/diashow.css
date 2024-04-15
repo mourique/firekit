@@ -1,0 +1,134 @@
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *             88  88                         88
+ *             88  ""                         88
+ *             88                             88
+ *     ,adPPYb,88  88  ,adPPYYba,  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8
+ *    a8"    `Y88  88  ""     `Y8  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'
+ *    8b       88  88  ,adPPPPP88   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'
+ *    "8a,   ,d88  88  88,    ,88  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'
+ *     `"8bbdP"Y8  88  `"8bbdP"Y8  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP
+ *
+ *
+ */
+
+/*
+essential styles:
+these make the slideshow work
+*/
+
+.block-diashow {
+  width: 100%;
+  position: relative;
+}
+
+.block-diashow .slide {
+  line-height:0;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top:0;
+  left:0;
+
+
+  opacity: 0;
+  z-index: 1;
+  background-size: cover;
+  background-color: black;
+  background-position: center;
+}
+
+.block-diashow.diashow-automatic .slide{
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.block-diashow .slide img {
+  width: 100%;
+  object-fit:cover;
+}
+
+.block-diashow .slide.showing {
+  opacity: 1;
+  z-index: 2;
+}
+
+/*
+.block.block-diashow {
+}
+
+.block.block-diashow .fadein {
+  position: relative;
+  overflow: hidden;
+  min-height: 30vh;
+  max-width: 100%;
+  aspect-ratio: var(--aspect-ratio);
+  background: #000;
+}
+
+
+.block.block-diashow .fadein picture.slide {
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  z-index: 1;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  object-fit: cover;
+}
+
+.block.block-diashow.diashow-automatic .fadein picture.slide {
+    -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.block.block-diashow .fadein picture.slide img {
+  min-width: 100%;
+  min-height: 100%;
+
+  max-width: 100%;
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  object-fit: cover;
+}
+
+.block.block-diashow .fadein picture.slide.showing {
+  opacity: 1;
+  z-index: 2;
+}
+
+@media (orientation: portrait) {
+  .block.block-diashow .fadein {
+    height: var(--image_height_mobile);
+    aspect-ratio: auto;
+  }
+
+  .block.block-diashow .fadein picture.slide img {
+    height: var(--image_height_mobile);
+    object-fit: cover;
+  }
+}
+*/

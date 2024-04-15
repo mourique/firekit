@@ -1,21 +1,22 @@
 <?php
 Kirby::plugin('felixf/firekit', [
+    'root' => 'path-to-folder',
     'options' => [
         'blocks' => [
-            ['name' => 'accordion',     'label_de' => 'Accordion', 'label_en' => 'Accordion'],
-            ['name' => 'button',        'label_de' => 'Button', 'label_en' => 'Button'],
-            ['name' => 'datablock',     'label_de' => 'Datenblock', 'label_en' => 'Datablock'],
-            ['name' => 'diashow',       'label_de' => 'Diashow', 'label_en' => 'Slideshow'],
-            ['name' => 'heading',       'subheadline' => true, 'label_de' => 'Überschrift', 'label_en' => 'Heading'],
-            ['name' => 'image',         'label_de' => 'Bild', 'label_en' => 'Image'],
-            ['name' => 'imageslider',   'label_de' => 'Bildslider', 'label_en' => 'Imageslider'],
-            ['name' => 'linklist',      'label_de' => 'Linkliste', 'label_en' => 'Linklist'],
-            ['name' => 'linkslider',    'label_de' => 'Linkslider', 'label_en' => 'Linkslider'],
-            ['name' => 'list',          'label_de' => 'Liste', 'label_en' => 'list'],
-            ['name' => 'logoticker',    'label_de' => 'Logoticker', 'label_en' => 'Logoticker'],
-            ['name' => 'pagination',    'label_de' => 'Pagination', 'label_en' => 'Pagination'],
-            ['name' => 'quote',         'label_de' => 'Zitat', 'label_en' => 'Quote'],
-            ['name' => 'text',          'label_de' => 'Text', 'label_en' => 'Text'],
+            ['name' => 'accordion', 'label_de' => 'Accordion', 'label_en' => 'Accordion'],
+            ['name' => 'button', 'label_de' => 'Button', 'label_en' => 'Button'],
+            ['name' => 'datablock', 'label_de' => 'Datenblock', 'label_en' => 'Datablock'],
+            ['name' => 'diashow', 'label_de' => 'Diashow', 'label_en' => 'Slideshow'],
+            ['name' => 'heading', 'subheadline' => true, 'label_de' => 'Überschrift', 'label_en' => 'Heading'],
+            ['name' => 'image', 'label_de' => 'Bild', 'label_en' => 'Image'],
+            ['name' => 'imageslider', 'label_de' => 'Bildslider', 'label_en' => 'Imageslider'],
+            ['name' => 'linklist', 'label_de' => 'Linkliste', 'label_en' => 'Linklist'],
+            ['name' => 'linkslider', 'label_de' => 'Linkslider', 'label_en' => 'Linkslider'],
+            ['name' => 'list', 'label_de' => 'Liste', 'label_en' => 'list'],
+            ['name' => 'logoticker', 'label_de' => 'Logoticker', 'label_en' => 'Logoticker'],
+            ['name' => 'pagination', 'label_de' => 'Pagination', 'label_en' => 'Pagination'],
+            ['name' => 'quote', 'label_de' => 'Zitat', 'label_en' => 'Quote'],
+            ['name' => 'text', 'label_de' => 'Text', 'label_en' => 'Text'],
         ],
         /* define the width of content here, well be used in kirby panel and in css */
         'containersizes' => [
@@ -31,7 +32,7 @@ Kirby::plugin('felixf/firekit', [
         'section_id' => function () {
             return "id" . substr(base_convert(md5($this->id()), 16, 32), 0, 12);
         },
-         'scoped_styles' => function () { // is embeded into the <section>
+        'scoped_styles' => function () { // is embeded into the <section>
 
             $element_styles = [];
 

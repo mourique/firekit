@@ -1,0 +1,129 @@
+:root {
+    /* logo marquee */
+  --size: clamp(4rem, 1rem + 40vmin, 20rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+
+
+
+
+
+/***
+ *
+ *    88           88                           88
+ *    88           88                           88
+ *    88           88                           88
+ *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8
+ *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"
+ *    88       d8  88  8b       d8  8b          8888[
+ *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,
+ *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a
+ *
+ *
+ *
+ *    88                                                      88              88
+ *    88                                               ,d     ""              88
+ *    88                                               88                     88
+ *    88   ,adPPYba,    ,adPPYb,d8   ,adPPYba,       MM88MMM  88   ,adPPYba,  88   ,d8    ,adPPYba,  8b,dPPYba,
+ *    88  a8"     "8a  a8"    `Y88  a8"     "8a        88     88  a8"     ""  88 ,a8"    a8P_____88  88P'   "Y8
+ *    88  8b       d8  8b       88  8b       d8        88     88  8b          8888[      8PP"""""""  88
+ *    88  "8a,   ,a8"  "8a,   ,d88  "8a,   ,a8"        88,    88  "8a,   ,aa  88`"Yba,   "8b,   ,aa  88
+ *    88   `"YbbdP"'    `"YbbdP"Y8   `"YbbdP"'         "Y888  88   `"Ybbd8"'  88   `Y8a   `"Ybbd8"'  88
+ *                      aa,    ,88
+ *                       "Y8bbdP"
+ */
+
+.block.block-logoticker {
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-left: calc(-1 * (20px + 1vw));
+  margin-right: calc(-1 * (20px + 1vw));
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  -webkit-animation: scroll-x var(--duration) linear infinite;
+
+  animation: scroll-x var(--duration) linear infinite;
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    animation-play-state: paused;
+  }
+}
+
+.marquee--reverse .marquee__group {
+  -webkit-animation-direction: reverse;
+  -webkit-animation-delay: -3s;
+
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+
+
+@-webkit-keyframes scroll-x {
+  from {
+    -webkit-transform: translateX(var(--scroll-start));
+  }
+  to {
+    -webkit-transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+
+/* Element styles */
+.marquee svg,
+.marquee figure {
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  fill: var(--color-text);
+  aspect-ratio: 16/9;
+  padding: calc(var(--size) / 10);
+}
+
+.marquee figure img {
+  object-fit: contain;
+}
+
+.marquee--vertical svg {
+  aspect-ratio: 1;
+  width: calc(var(--size) / 1.5);
+  padding: calc(var(--size) / 6);
+}
+
+/* Parent wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+  max-width: 100vw;
+}

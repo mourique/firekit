@@ -1,0 +1,80 @@
+/* accordion block */
+.block-accordion {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid currentColor;
+}
+
+.accordion__intro {
+  position: relative;
+  padding: 20px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--step-1)
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.25s ease-out;
+  opacity: 0;
+}
+
+.block-accordion p {
+  margin: 0;
+}
+
+.block-accordion span {
+  font-weight: bold;
+  max-width: calc(100% - 55px);
+}
+
+.block-accordion p {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.accordion__active .accordion__content {
+  opacity: 1;
+}
+
+.accordion__intro:after {
+  content: "+";
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  line-height: 20px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: currentColor;
+}
+
+.accordion__intro:after {
+  /*  content: "+";
+    content: url(/assets/img/accordion-plus.svg);*/
+  /* the new method allows for the svg to be colored depending on the parent */
+
+  content: "";
+  -webkit-mask: url(/media/plugins/felixf/firekit/img/accordion-plus.svg) no-repeat 50% 50%;
+  mask: url(/media/plugins/felixf/firekit/img/accordion-plus.svg) no-repeat 50% 50%;
+
+}
+
+.accordion__active .accordion__intro:after {
+  /*  content: "-";
+    content: url(/assets/img/accordion-minus.svg);*/
+  /* the new method allows for the svg to be colored depending on the parent */
+  content: "";
+  -webkit-mask: url(/media/plugins/felixf/firekit/img/accordion-minus.svg) no-repeat 50% 50%;
+  mask: url(/media/plugins/felixf/firekit/img/accordion-minus.svg) no-repeat 50% 50%;
+
+}
