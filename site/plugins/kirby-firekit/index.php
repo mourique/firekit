@@ -1,6 +1,6 @@
 <?php
 Kirby::plugin('felixf/firekit', [
-    'root' => 'path-to-folder',
+    'root' => '/home/felixfde/public_html/firekit.felixf.de',
     'options' => [
         'blocks' => [
             ['name' => 'accordion', 'label_de' => 'Accordion', 'label_en' => 'Accordion'],
