@@ -111,3 +111,4 @@ Icon?
 # Env
 # ---------------
 .env
+.firekit.conf
