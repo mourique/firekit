@@ -3,8 +3,21 @@
   <source data-thumbhash="<?= $image->thumbhash() ?>" data-srcset="<?= $image->srcset('webp') ?>" sizes="<?= $sizes ?>" type="image/webp" >
 
   <?php if ($dont_be_lazy) : ?>
-    <img style="object-position: <?= $image->focus() ?>; --aspect-ratio:<?= $ratio ?>;" src="<?= $image->url() ?>" data-srcset="<?= $image->srcset() ?>" sizes="<?= $sizes ?>" data-sizes="auto" alt="<?= $image->alt() ?>" >
+    <img style="object-position: <?= $image->focus() ?>; --aspect-ratio:<?= $ratio ?>;"
+         src="<?= $image->url() ?>"
+         data-srcset="<?= $image->srcset() ?>"
+         sizes="<?= $sizes ?>"
+         data-sizes="auto"
+         alt="<?= $image->alt() ?>" >
   <?php else : ?>
-    <img style="object-position: <?= $image->focus() ?>; --aspect-ratio:<?= $ratio ?>;" data-thumbhash="<?= $image->thumbhash() ?>" data-src="<?= $image->url() ?>" loading="lazy" decoding="async" data-srcset="<?= $image->srcset() ?>" sizes="<?= $sizes ?>" data-sizes="auto" alt="<?= $image->alt() ?>" >
+    <img style="object-position: <?= $image->focus() ?>; --aspect-ratio:<?= $ratio ?>;"
+         data-thumbhash="<?= $image->thumbhash() ?>"
+         data-src="<?= $image->url() ?>"
+         loading="lazy"
+         decoding="async"
+         data-srcset="<?= $image->srcset() ?>"
+         sizes="<?= $sizes ?>"
+         data-sizes="auto"
+         alt="<?= $image->alt() ?>" >
   <?php endif;  ?>
 </picture>
