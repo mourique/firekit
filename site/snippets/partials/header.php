@@ -19,8 +19,8 @@
   <meta name="twitter:image:alt" content="image description">
 
 
-  <?= js('assets/js/loadeer.js', ['init' => true, 'defer' => true]) ?>
-  <?= js('assets/js/keen-slider.js') ?>
+  <?= js('/assets/js/loadeer.js', ['init' => true, 'defer' => true]) ?>
+  <?= js('/assets/js/keen-slider.js') ?>
 
   <?= snippet('containersizes'); ?>
 
@@ -33,20 +33,18 @@
       echo css('media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
     endforeach;
   ?>
-  <?= css('assets/css/normalize.css') ?>
-  <?= css('assets/css/variables.css') ?>
-  <?= css('assets/css/grid.css') ?>
-  <?= css('assets/css/header.css') ?>
-  <?= css('assets/css/keen-slider.css') ?>
-  <?php // css('assets/css/block-factory.css') ?>
-  <?= css('assets/css/styles.css') ?>
+  <?= css('/assets/css/normalize.css') ?>
+  <?= css('/assets/css/variables.css') ?>
+  <?= css('/assets/css/grid.css') ?>
+  <?= css('/assets/css/header.css') ?>
+  <?= css('/assets/css/keen-slider.css') ?>
+  <?php // css('/assets/css/block-factory.css') ?>
+  <?= css('/assets/css/styles.css') ?>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <?= js('assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images  ?>
+  <?= js('/assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images  ?>
 
-  <!-- Preload moused-over pages with https://fasterthanlight.net/ * https://github.com/weebney/tachyon -->
-  <?= js('assets/js/tachyon.js', ['type' => 'module', 'defer' => true]) ?>
 </head>
 
 <body class="page-<?= $page->slug() ?>">
