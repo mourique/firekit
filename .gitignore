@@ -112,3 +112,4 @@ Icon?
 # ---------------
 .env
 .firekit.conf
+.htaccess
