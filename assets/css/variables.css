@@ -54,6 +54,22 @@
   /* Custom pairs */
   --space-s-l: clamp(1.13rem, calc(0.60rem + 2.63vw), 3.75rem);
 
+
+  /* Firekit Type System */
+  /* generate the clamp values with utopia and then add to appropriate values */
+/*  --headline-1: clamp(1.68rem, 0.5259rem + 5.7706vw, 7.4506rem);
+  --headline-2: clamp(1.5744rem, 0.6971rem + 4.3863vw, 5.9606rem);
+  --headline-3: clamp(1.4756rem, 0.8171rem + 3.2925vw, 4.7681rem);
+  --headline-4: clamp(1.3831rem, 0.8968rem + 2.4319vw, 3.815rem)
+  --headline-5: clamp(1.2963rem, 0.9451rem + 1.7556vw, 3.0519rem)
+  --headline-6: clamp(1.215rem, 0.9698rem + 1.2263vw, 2.4413rem)
+  --super-small-text: clamp(0.8rem, 0.8938rem + -0.0781vw, 0.8781rem);
+  --small-text:
+  --regular-text:
+  --large-text:
+  --super-large-text:*/
+
+
   /* custom spacing */
   --header-height: 70px;
   --section-spacing: min(15vw, 6rem);
