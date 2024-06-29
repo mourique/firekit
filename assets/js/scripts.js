@@ -9,7 +9,7 @@
   });
 
 
-  const accordions = document.querySelectorAll(".accordion");
+  const accordions = document.querySelectorAll(".block-accordion");
 
 const openAccordion = (accordion) => {
 	const content = accordion.querySelector(".accordion__content");
