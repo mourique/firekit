@@ -23,9 +23,7 @@ body {
 
 
 /* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
-a {
-  word-break: break-word;
-}
+a { word-break: break-word; }
 
 /* sticky footer *****************************************************************/
 body {
