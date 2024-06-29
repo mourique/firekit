@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
-/* webfont ***********************************************************************/
-
-@font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather-Regular.ttf');
-}
-
 /* /end webfont  *****************************************************************/
 
 body {
@@ -50,10 +43,7 @@ footer {
   flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
 }
 
-
 body > footer {
-  background: #414a4c;
-  color: #beb5b3;
   min-height: 30vh;
   padding-top: var(--space-s)
 }
