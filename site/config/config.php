@@ -5,7 +5,7 @@ return [
 
     'languages' => true,
     'panel' => [
-        'css' => 'assets/css/custom-panel.css'
+        'css' => '../assets/css/custom-panel.css'
     ],
     'thumbs' => [
         'srcsets' => [
