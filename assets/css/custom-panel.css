@@ -1,6 +1,5 @@
 /* leave a bit of space between layouts (sections) to visually seperate them better */
 .k-layout:not(:last-of-type) {
-  margin-bottom: 5px;
 }
 
 .k-layout {
@@ -9,6 +8,7 @@
 
 .k-grid.k-layout-columns {
   background: rgba(0,0,0,0.1);
+  min-height: 140px;
 }
 
 .k-layout-column {
@@ -32,6 +32,7 @@ header.k-field-header:has(label[title=""]  ) {
   position: relative;
 }
 
+/*
 .k-help.k-field-help.k-text {
   position: absolute;
   top: 23px;
@@ -41,3 +42,4 @@ header.k-field-header:has(label[title=""]  ) {
   border-radius: 3px;
   left: -10px;
 }
+*/

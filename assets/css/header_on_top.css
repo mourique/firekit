@@ -41,8 +41,6 @@ header .content-wrapper {
 }
 
 .logo {
-  font-family: 'Merriweather';
-  font-size: 150%;
 }
 
 @media (min-width: 1025px) {
@@ -56,14 +54,12 @@ header .content-wrapper {
   }
 }
 
-
 header nav {
   display: flex;
   gap: 20px;
 }
 
 /* mobile */
-
 
 #main-menu {
   display: none;
