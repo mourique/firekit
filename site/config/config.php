@@ -26,6 +26,10 @@ return [
         ]
     ],
     'felixf.firekit' => [
+        // the header style needs to be created as a css file,
+        // currently only 'header_on_top'
+        'header_style' => 'header_on_top',
+
         'blocks' => [
 
             /* this would be nicer:

@@ -37,6 +37,7 @@
   <?= css('/assets/css/variables.css') ?>
   <?= css('/assets/css/grid.css') ?>
   <?= css('/assets/css/header.css') ?>
+  <?= css('/assets/css/' . option('felixf.firekit.header_style') . '.css') ?>
   <?= css('/assets/css/keen-slider.css') ?>
   <?php // css('/assets/css/block-factory.css') ?>
   <?= css('/assets/css/styles.css') ?>
