@@ -24,15 +24,16 @@
 
   <?= snippet('containersizes'); ?>
 
-  <?= snippet('dynamic_css'); // injects styles based on config.php  ?>
+  <?= snippet('dynamic_css'); // injects styles based on config.php   ?>
 
   <?php
-    // loop through all available blocks defined in config and load respective css
-    $available_blocks = option('felixf.firekit.blocks');
-    foreach ($available_blocks as $block) :
-      echo css('media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
-    endforeach;
+  // loop through all available blocks defined in config and load respective css
+  $available_blocks = option('felixf.firekit.blocks');
+  foreach ($available_blocks as $block) :
+    echo css('media/plugins/felixf/firekit/css/' . $block['name'] . '.css');
+  endforeach;
   ?>
+
   <?= css('/assets/css/normalize.css') ?>
   <?= css('/assets/css/variables.css') ?>
   <?= css('/assets/css/grid.css') ?>
@@ -44,7 +45,7 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <?= js('/assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images  ?>
+  <?= js('/assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images   ?>
 
 </head>
 
@@ -59,37 +60,45 @@ if ($layouts->isNotEmpty()) :
   /*$layouts->first()->colored_area();
   */
   $layouts->first()->element_styles('section');
-
-  if ($config_color != "") :
-    $color = $themecolors[$config_color];
-    $first_backgroundcolor = $layouts->first()->colored_area() . "-" . $color['name'];
-  endif;
+  if ($layouts->first()->is_colored()->isTrue()) {
+    if ($config_color != "") :
+      $color = $themecolors[$config_color];
+      $first_backgroundcolor = $layouts->first()->colored_area() . "-" . $color['name'];
+    endif;
+  }
 endif;
 ?>
 
 <header
   class="<?= $first_backgroundcolor ?>">
   <div class="content-wrapper content-regular">
-    <a href="/" class="logo">🔥 Firekit</a>
-    <?php $items = $pages->listed(); ?>
-    <?php if ($items->isNotEmpty()): ?>
-      <label id="menu-button" for="main-menu">
+    <div class="row">
+      <div class="col col-xs-12 col-md-3">
+        <a href="/" class="logo">🔥 Firekit</a>
+      </div>
+      <div class="col col-xs-12 col-md-9">
+        <?php $items = $pages->listed(); ?>
+        <?php if ($items->isNotEmpty()): ?>
+          <label id="menu-button" for="main-menu">
 
-      <span class="menu-text"> Menü</span>
-        <div class="hamburger hamburger--squeeze">
-          <div class="hamburger-box">
-            <div class="hamburger-inner"></div>
-          </div>
-        </div>
-      </label>
-      <input type="checkbox" id="main-menu" class="visually-hidden">
+            <span class="menu-text"> Menü</span>
+            <div class="hamburger hamburger--squeeze">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+          </label>
+          <input type="checkbox" id="main-menu" class="visually-hidden">
 
-      <nav>
-        <?php foreach ($items as $item): ?>
-          <a<?php e($item->isOpen(), ' class="active"') ?> href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
-        <?php endforeach ?>
-      </nav>
-    <?php endif ?>
+          <nav>
+            <?php foreach ($items as $item): ?>
+              <a<?php e($item->isOpen(), ' class="active"') ?>
+                href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
+            <?php endforeach ?>
+          </nav>
+        <?php endif ?>
+      </div>
+    </div>
   </div>
 </header>
 

@@ -1,7 +1,8 @@
 <?php
 Kirby::plugin('felixf/firekit', [
-    'root' => '/home/felixfde/public_html/firekit.felixf.de',
+    /*    'root' => '/home/felixfde/public_html/firekit.felixf.de',*/
     'options' => [
+        /* firekit.blocks */
         'blocks' => [
             ['name' => 'accordion', 'label_de' => 'Accordion', 'label_en' => 'Accordion'],
             ['name' => 'button', 'label_de' => 'Button', 'label_en' => 'Button'],
@@ -18,18 +19,41 @@ Kirby::plugin('felixf/firekit', [
             ['name' => 'quote', 'label_de' => 'Zitat', 'label_en' => 'Quote'],
             ['name' => 'text', 'label_de' => 'Text', 'label_en' => 'Text'],
         ],
-        /* define the width of content here, well be used in kirby panel and in css */
+        /* define the width of content here, will be used in kirby panel and in css */
         'containersizes' => [
-            ['name' => 'Standard', 'slug' => 'regular', 'width' => '90vw', 'max-width' => 'max(60vw, 1500px)'],
-            ['name' => 'Randlos', 'slug' => 'full', 'width' => '100%', 'max-width' => '100%'],
-            ['name' => 'Volle Breite', 'slug' => 'max', 'width' => '98vw', 'max-width' => '2200px'],
-            ['name' => 'Schmal', 'slug' => 'small', 'width' => '90vw', 'max-width' => 'max(50vw, 1000px)'],
-            ['name' => 'Breit', 'slug' => 'large', 'width' => '98vw', 'max-width' => '1700px']
+            [
+                'name' => 'Standard',
+                'slug' => 'regular',
+                'width' => '90vw',
+                'max-width' => 'max(60vw, 1500px)'
+            ], [
+                'name' => 'Randlos',
+                'slug' => 'full',
+                'width' => '100%',
+                'max-width' => '100%'
+            ], [
+                'name' => 'Volle Breite',
+                'slug' => 'max',
+                'width' => '98vw',
+                'max-width' => '2200px'
+            ], [
+                'name' => 'Schmal',
+                'slug' => 'small',
+                'width' => '90vw',
+                'max-width' => 'max(50vw, 1000px)'
+            ], [
+                'name' => 'Breit',
+                'slug' => 'large',
+                'width' => '98vw',
+                'max-width' => '1700px'
+            ]
         ],
         /* define the brand colors here, lowercase letters */
     ],
     'layoutMethods' => [
-        'section_id' => function () {
+        'section_id' => /**
+         * @return string
+         */ function () {
             return "id" . substr(base_convert(md5($this->id()), 16, 32), 0, 12);
         },
         'scoped_styles' => function () { // is embeded into the <section>
@@ -48,17 +72,25 @@ Kirby::plugin('felixf/firekit', [
             $lowercase_layoutcolor = strtolower($this->themecolors()->toString());
 
             $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'first-back'));
-
-            if ($config_color != "") {
-                $color = $themecolors[$config_color];
+            if ($this->is_colored()->isTrue()) {
+                if ($config_color != "") {
+                    $color = $themecolors[$config_color];
+                    $element_styles[] = "--first-front:" . $color['first-front'] . ";";
+                    $element_styles[] = "--first-back:" . $color['first-back'] . ";";
+                    $element_styles[] = "--second-front:" . $color['second-front'] . ";";
+                    $element_styles[] = "--second-back:" . $color['second-back'] . ";";
+                    $element_styles[] = "--third-front:" . $color['third-front'] . ";";
+                    $element_styles[] = "--third-back:" . $color['third-back'] . ";";
+                }
+            } else {
+                $element_styles[] = "--first-front:#000000;";
+                $element_styles[] = "--first-back:#FFFFFF;";
+                $element_styles[] = "--second-front: #FFFFFF;";
+                $element_styles[] = "--second-back:#000000;";
+                $element_styles[] = "--third-front:#FFFFFF;";
+                $element_styles[] = "--third-back:#000000;";
             }
 
-            $element_styles[] = "--first-front:" . $color['first-front'] . ";";
-            $element_styles[] = "--first-back:" . $color['first-back'] . ";";
-            $element_styles[] = "--second-front:" . $color['second-front'] . ";";
-            $element_styles[] = "--second-back:" . $color['second-back'] . ";";
-            $element_styles[] = "--third-front:" . $color['third-front'] . ";";
-            $element_styles[] = "--third-back:" . $color['third-back'] . ";";
 
             $styleblock = "<style>section#" . $this->section_id() . "{" . implode("", $element_styles) . "}</style>";
 

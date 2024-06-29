@@ -105,46 +105,59 @@ tabs:
                     headline_colors:
                       label: Farben
                       type: headline
-                      help: Alle abhängigen Farben werden anhand der gewählten Hintergrundfarbe definiert.
+                      help: Alle abhängigen Farben werden anhand der gewählten Hintergrundfarbe definiert. Die Sektion bezieht sich auf den gesamten horizontalen Bereich bis zum Browserrand, die Reihe geht nur bis zur Inhaltsbegrenzung und die Spalten befinden sich einzeln in der Reihe.
+                    is_colored:
+                      type: toggle
+                      label: Layout einfärben
+                      icon: palette-line
+                      default: false
+                      width: 1/4
                     themecolors:
                       extends: fields/themecolors
-                      width: 1/3
+                      width: 1/4
                       required: true
+                      when:
+                        is_colored: true
                     colored_area:
                       type: select
                       required: true
-                      label: Fläche einfärben
+                      label: Welche Fläche einfärben
+                      default: colored_section
+                      when:
+                        is_colored: true
                       options:
-                        colored_section: "Gesamte Sektion einfärben"
-                        colored_row: "Nur Reihe einfärben"
-                        colored_cols: "Nur Spalten einfärben"
-                      width: 1/3
+                        colored_section: "komplett"
+                        colored_row: "Nur Reihe"
+                        colored_cols: "Nur Spalten"
+                      width: 1/4
                     colored_secondary:
                       type: select
-                      label: Sekundär einfärben
-                      width: 1/3
+                      label: zusätzlich einfärben
+                      width: 1/4
                       options:
-                        colored_row: "zusätzlich Reihe einfärben"
-                        colored_cols: "zusätzlich Spalten einfärben"
+                        colored_row: "Reihe"
+                        colored_cols: "Spalten"
                       when:
                         colored_area: colored_section
+                        is_colored: true
                     headline_image:
                       label: Hintergrundbild
                       type: headline
                     add_bgimg:
                       type: toggle
-                      label: Hintergrundbild hinzufügen
+                      label: Bild hinzufügen
+                      width: 1/4
                     backgroundimage:
                       label: Background image
                       type: files
                       label: Hintergrundbild
-                      width: 1/2
+                      width: 1/4
                       when:
                         add_bgimg: true
                     backgroundimage_position:
                       label: Position des Hintergrundbildes
                       type: select
-                      width: 1/2
+                      width: 1/4
                       required: true
                       default: full
                       when:
@@ -155,7 +168,7 @@ tabs:
                     backgroundimage_vertical_position:
                       label: Vertikale Positionierung des Bildes
                       type: toggles
-                      width: 1/2
+                      width: 1/4
                       default: top
                       labels: false
                       when:

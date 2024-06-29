@@ -1073,8 +1073,10 @@ section {
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background-color: var(--first-back, #FFFFFF);
-  color: var(--first-front, #000000);
+}
+section.colored_section {
+    background-color: var(--first-back);
+  color: var(--first-front);
 }
 
 .colored_section.colored_cols .content-wrapper {
@@ -1113,9 +1115,9 @@ section {
 @media screen and (min-width: 1024px) {
     /* colored_row */
 
-  section.colored_row .row {
+/*  section.colored_row .row {
     margin: 0 -3vw;
-  }
+  }*/
 
   section.colored_row .row {
     padding: 4rem 2vw;
@@ -1126,10 +1128,10 @@ section {
     padding: 2rem;
     height: 100%;
   }
-
+/*
   section.colored_cols .row {
     margin: 0 -3rem;
-  }
+  }*/
 }
 
 /* dynamic coloring of elements */
