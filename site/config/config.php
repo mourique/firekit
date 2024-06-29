@@ -41,7 +41,6 @@ return [
             ['name' => 'image', 'label_de' => 'Bild', 'label_en' => 'Image'],
             ['name' => 'quote', 'label_de' => 'Zitat', 'label_en' => 'Quote'],
             ['name' => 'button', 'label_de' => 'Button', 'label_en' => 'Button'],
-            ['name' => 'list', 'label_de' => 'Liste', 'label_en' => 'list'],
             ['name' => 'accordion', 'label_de' => 'Accordion', 'label_en' => 'Accordion'],
             ['name' => 'datablock', 'label_de' => 'Datenblock', 'label_en' => 'Datablock'],
             ['name' => 'diashow', 'label_de' => 'Diashow', 'label_en' => 'Slideshow'],
