@@ -60,23 +60,37 @@ return [
         ],
         /* define the brand colors here, lowercase letters */
         'themecolors' => [
+/*            [
+                'name'          => 'default',
+
+                'first-front'   => '#111111',
+                'first-back'    => '#ffffff',
+                'second-front'  => '#333333',
+                'second-back'   => '#eeeeee',
+                'third-front'   => '#333333',
+                'third-back'    => '#fcefd8'
+
+            ],*/
             [
-                'name' => 'default',
-                'first-front' => '#111111',
-                'first-back' => '#ffffff',
-                'second-front' => '#333333',
-                'second-back' => '#eeeeee',
-                'third-front' => '#333333',
-                'third-back' => '#fcefd8'
-            ],
-            [
-                'name' => 'primary',
-                'first-front' => '#333333',
-                'first-back' => '#fcefd8',
-                'second-front' => '#ffffff',
-                'second-back' => '#333333',
-                'third-front' => '#111111',
-                'third-back' => '#f3b241'
+                'name'          => 'primary',
+
+                'first-front'   => '#333333',
+                'first-back'    => '#fcefd8',
+                'second-front'  => '#ffffff',
+                'second-back'   => '#333333',
+                'third-front'   => '#111111',
+                'third-back'    => '#f3b241'
+
+            ], [
+                'name'          => 'secondary',
+
+                'first-front'   => '#EBF4F6',
+                'first-back'    => '#071952',
+                'second-front'  => '#EBF4F6',
+                'second-back'   => '#37B7C3',
+                'third-front'   => '#071952',
+                'third-back'    => '#37B7C3'
+
             ]
         ],
     ]
