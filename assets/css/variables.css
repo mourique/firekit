@@ -29,7 +29,6 @@
   /* Step 10: 30.60px → 186.26px */
   --step-10: clamp(1.9125rem, -0.0332rem + 9.7288vw, 11.6413rem);
 
-
   /* sizing */
   --space-3xs: clamp(0.31rem, calc(0.28rem + 0.19vw), 0.50rem);
   --space-2xs: clamp(0.56rem, calc(0.49rem + 0.38vw), 0.94rem);
@@ -54,7 +53,6 @@
   /* Custom pairs */
   --space-s-l: clamp(1.13rem, calc(0.60rem + 2.63vw), 3.75rem);
 
-
   /* Firekit Type System */
   /* generate the clamp values with utopia and then add to appropriate values */
 /*  --headline-1: clamp(1.68rem, 0.5259rem + 5.7706vw, 7.4506rem);
@@ -77,23 +75,4 @@
   --colored-row-spacing: 3rem;
   --first-section-top-padding: 200px;
 
-  /* visualize grid (uses javascript bookmarklet) --> grid.css */
-  --offset: 20px;
-  --max_width: 2160px;
-  --columns: 24;
-  --gutter: 2rem;
-  --grid-color: hsla(14, 80%, 72%, 0.25);
-  --repeating-width: calc(100% / var(--columns));
-
-  --column-width: calc((100% / var(--columns)) - var(--gutter));
-
-  --background-width: calc(100% + var(--gutter));
-
-  --background-columns: repeating-linear-gradient(
-    to right,
-    var(--grid-color),
-    var(--grid-color) var(--column-width),
-    transparent var(--column-width),
-    transparent var(--repeating-width)
-  );
 }
