@@ -38,6 +38,8 @@ header .content-wrapper .row{
 }
 
 .logo {
+  font-family: sans-serif;
+  font-size: 1rem;
 }
 
 @media (min-width: 1025px) {

@@ -24,7 +24,7 @@
 
   <?= snippet('containersizes'); ?>
 
-  <?= snippet('dynamic_css'); // injects styles based on config.php   ?>
+  <?= snippet('dynamic_css'); // injects styles based on config.php    ?>
 
   <?php
   // loop through all available blocks defined in config and load respective css
@@ -45,7 +45,7 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <?= js('/assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images   ?>
+  <?= js('/assets/js/unlazy-with-hashing.js', ['init' => true, 'defer' => true]); // lazyloading images    ?>
 
 </head>
 
@@ -73,29 +73,39 @@ endif;
   class="<?= $first_backgroundcolor ?>">
   <div class="content-wrapper content-regular">
     <div class="row">
-      <div class="col col-xs-12 col-md-3">
-        <a href="/" class="logo">🔥 Firekit</a>
+      <div class="col col-xs-12 col-md-2 blocks-align-vcenter">
+        <div class="blocks ">
+          <div class="block-logo">
+            <a href="/" class="logo">🔥 Firekit</a>
+          </div>
+        </div>
       </div>
-      <div class="col col-xs-12 col-md-9">
-        <?php $items = $pages->listed(); ?>
-        <?php if ($items->isNotEmpty()): ?>
-          <label id="menu-button" for="main-menu">
 
-            <span class="menu-text"> Menü</span>
-            <div class="hamburger hamburger--squeeze">
-              <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
+
+      <?php $items = $pages->listed(); ?>
+      <?php if ($items->isNotEmpty()): ?>
+      <div class="col col-xs-12 col-md-10 blocks-align-vcenter blocks-align-right">
+        <div class="blocks ">
+          <div class="block-nav">
+            <label id="menu-button" for="main-menu">
+
+              <span class="menu-text"> Menü</span>
+              <div class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
               </div>
-            </div>
-          </label>
-          <input type="checkbox" id="main-menu" class="visually-hidden">
+            </label>
+            <input type="checkbox" id="main-menu" class="visually-hidden">
 
-          <nav>
-            <?php foreach ($items as $item): ?>
-              <a<?php e($item->isOpen(), ' class="active"') ?>
-                href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
-            <?php endforeach ?>
-          </nav>
+            <nav>
+              <?php foreach ($items as $item): ?>
+                <a<?php e($item->isOpen(), ' class="active"') ?>
+                  href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
+              <?php endforeach ?>
+            </nav>
+          </div>
+        </div>
         <?php endif ?>
       </div>
     </div>
