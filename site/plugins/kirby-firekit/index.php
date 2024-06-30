@@ -18,6 +18,7 @@ Kirby::plugin('felixf/firekit', [
             ['name' => 'pagination', 'label_de' => 'Pagination', 'label_en' => 'Pagination'],
             ['name' => 'quote', 'label_de' => 'Zitat', 'label_en' => 'Quote'],
             ['name' => 'text', 'label_de' => 'Text', 'label_en' => 'Text'],
+            ['name' => 'column_settings', 'label_de' => 'Spalteneinstellungen', 'label_en' => 'column settings'],
         ],
         /* define the width of content here, will be used in kirby panel and in css */
         'containersizes' => [
@@ -98,22 +99,28 @@ Kirby::plugin('felixf/firekit', [
 
         },
         'section_classes' => function () {
+            // Initialize an array to store CSS classes for the section
             $section_classes = [];
 
-            $themecolors = option('felixf.firekit.themecolors');
-            $lowercase_layoutcolor = strtolower($this->themecolors()->toString());
-            $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'first-back'));
-            if ($config_color != "") :
-                $color = $themecolors[$config_color];
-                $color_name = "color-" . $color['name'];
-                $foreground_color = $color['first-front'];
-                array_push($section_classes, $color_name);
+            if ($this->is_colored()->isTrue()):
+                // Retrieve theme colors from config.php
+                $themecolors = option('felixf.firekit.themecolors');
+
+                // Convert the theme color to lowercase
+                $lowercase_layoutcolor = strtolower($this->themecolors()->toString());
+
+                $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'first-back'));
+
+                if ($config_color != "") :
+                    $color = $themecolors[$config_color];
+                    $color_name = "color-" . $color['name'];
+                    $foreground_color = $color['first-front'];
+                    array_push($section_classes, $color_name);
+                endif;
+
+                array_push($section_classes, $this->colored_area());
+                array_push($section_classes, $this->colored_secondary());
             endif;
-
-            array_push($section_classes, $this->colored_area());
-            array_push($section_classes, $this->colored_secondary());
-
-            array_push($section_classes, $this->vertical_align());
 
             if ($this->backgroundimage()->isNotEmpty()) :
                 array_push($section_classes, "has-background-image");
