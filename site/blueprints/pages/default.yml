@@ -171,6 +171,7 @@ tabs:
                           icon: align-bottom
       sidebar:
         width: 1/4
+        sticky: true
         sections:
           pages:
             type: pages
