@@ -1,4 +1,15 @@
-/* http://flexboxgrid.com/ */
+/*
+  http://flexboxgrid.com/
+  the grid system is adapted from flexboxgrid and integrated into kirby layouts and blocks
+  The Order of HTML Element from outside to inside is:
+  - section
+  - .content-wrapper
+  - .row
+  - .col
+  - .blocks
+  - .block
+ */
+
 .container-fluid,
 .container {
   margin-right: auto;
@@ -25,8 +36,8 @@
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -1rem;
-  margin-left: -1rem;
+/*  margin-right: -1rem;
+  margin-left: -1rem;*/
 }
 
 .row.reverse {
@@ -182,7 +193,7 @@
   margin-left: 91.66666667%;
 }
 
-.start-xs {
+/*.start-xs {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
@@ -224,9 +235,9 @@
 .around-xs {
   -ms-flex-pack: distribute;
   justify-content: space-around;
-}
+}*/
 
-.between-xs {
+/*.between-xs {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -242,6 +253,29 @@
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
+}*/
+
+.blocks {
+  display:flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+}
+
+
+@media (min-width: 900px) {
+  .blocks-align-vcenter.blocks{
+    justify-content: center;
+  }
+  .blocks-align-hcenter .blocks{
+    align-items: center;
+  }
+  .blocks-align-bottom .blocks{
+    justify-content: flex-end;
+  }
+  .blocks-align-right .blocks{
+    align-items: flex-end;
+  }
 }
 
 @media only screen and (min-width: 48em) {
@@ -933,26 +967,6 @@ body.visualize-grid::after {
 }
 
 
-.row {
-  /*	height:100%;*/
-  /*overflow-x: hidden;*/
-}
-
-
-@media (min-width: 900px) {
-  .blocks-align-center .content-wrapper > .row{
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .blocks-align-bottom .content-wrapper > .row{
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-  }
-}
 
 /* collapsible rows for mobile */
 label.collapsible-row-label {

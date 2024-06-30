@@ -49,6 +49,8 @@ return [
             ['name' => 'linkslider', 'label_de' => 'Linkslider', 'label_en' => 'Linkslider'],
             ['name' => 'logoticker', 'label_de' => 'Logoticker', 'label_en' => 'Logoticker'],
             ['name' => 'pagination', 'label_de' => 'Pagination', 'label_en' => 'Pagination'],
+            ['name' => 'column_settings', 'label_de' => 'Spalteneinstellungen', 'label_en' => 'column settings'],
+
         ],
         /* define the width of content here, well be used in kirby panel and in css */
         'containersizes' => [

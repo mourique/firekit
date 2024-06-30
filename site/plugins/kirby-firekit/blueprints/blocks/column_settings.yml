@@ -1,0 +1,69 @@
+name: Column Settings
+icon: settings
+fields:
+  vertical_align:
+    label: Vertikale Positionierung des Inhalts
+    type: toggles
+    width: 1/3
+    default: blocks-align-top
+    labels: false
+    options:
+      - value: blocks-align-top
+        text: Oben
+        icon: align-item-top-fill
+      - value: blocks-align-vcenter
+        text: Mitte
+        icon: align-item-vertical-center-fill
+      - value: blocks-align-bottom
+        text: Unten
+        icon: align-item-bottom-fill
+  horizontal_align:
+    label: Horizontale Positionierung des Inhalts
+    type: toggles
+    width: 1/3
+    default: blocks-align-left
+    labels: false
+    options:
+      - value: blocks-align-left
+        text: Oben
+        icon: align-item-left-fill
+      - value: blocks-align-hcenter
+        text: Mitte
+        icon: align-item-horizontal-center-fill
+      - value: blocks-align-right
+        text: Unten
+        icon: align-item-right-fill
+  col_sizing:
+    type: headline
+    label: Spaltenbreiten in verschiedenen Endgeräten
+    help: Medium ist die Standardgröße in den Kirby Layouts und lässt sich nicht verändern, alle anderen Breakpoints können angepasst werden.
+  col_xs:
+    type: number
+    max: 12
+    label: Extra Small
+    min: 1
+    before: col-xs-
+    default: 12
+    width: 1/4
+  col_sm:
+    label: Small
+    type: number
+    max: 12
+    min: 1
+    width: 1/4
+    before: col-sm-
+  col_md:
+    label: Medium
+    type: number
+    max: 12
+    min: 1
+    width: 1/4
+    before: col-md-
+    disabled: true
+  col_lg:
+    Label: Large
+    type: number
+    max: 12
+    min: 1
+    width: 1/4
+    before: col-lg-

@@ -43,6 +43,7 @@ tabs:
                   - linkslider
                   - pagination
                   - accordion
+                  - column_settings
                 settings:
                   fields:
                     headline_padding:
