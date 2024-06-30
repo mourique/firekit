@@ -68,22 +68,6 @@ tabs:
                       text:
                         - "nein"
                         - "ja"
-                    vertical_align:
-                      label: Vertikale Positionierung des Inhalts
-                      type: toggles
-                      width: 1/3
-                      default: blocks-align-top
-                      labels: false
-                      options:
-                        - value: blocks-align-top
-                          text: Oben
-                          icon: align-top
-                        - value: blocks-align-center
-                          text: Mitte
-                          icon: align-vertically
-                        - value: blocks-align-bottom
-                          text: Unten
-                          icon: align-bottom
                     minheight:
                       type: text
                       label: Mindesthöhe der Sektion
