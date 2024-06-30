@@ -34,6 +34,7 @@ tabs:
                   - image
                   - list
                   - quote
+                  - code
                   - datablock
                   - button
                   - diashow
