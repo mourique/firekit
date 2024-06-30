@@ -8,6 +8,8 @@
     $link = $block->link();
     $ratio = $block->ratio()->or('auto');
     $image_height_mobile = $block->image_height_mobile()->or('auto');
+    $image_max_height = $block->max_height()->or('auto');
+    $image_max_width = $block->max_width()->or('auto');
     $src = null;
 /*    $sizes = "(min-width: 1125px) calc(" . round(100 / (12 / $column->span()), 0) . "vw),
               100vw";*/
@@ -21,7 +23,7 @@
 
     <?php if ($src): ?>
         <figure<?= Html::attr(['data-ratio' => $ratio, 'data-crop' => $crop], null, ' ') ?>
-                style="--padding-top:<?= $block->padding_top() ?>;--padding-right:<?= $block->padding_right() ?>;--padding-bottom:<?= $block->padding_bottom() ?>;--padding-left:<?= $block->padding_left() ?>;">
+                style="--padding-top:<?= $block->padding_top() ?>;--padding-right:<?= $block->padding_right() ?>;--padding-bottom:<?= $block->padding_bottom() ?>;--padding-left:<?= $block->padding_left() ?>;max-width:<?= $image_max_width ?>;">
 
             <?php if ($link->isNotEmpty()): ?><a href="<?= Str::esc($link->toUrl()) ?>"><?php endif; ?>
 
