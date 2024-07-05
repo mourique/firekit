@@ -16,6 +16,79 @@ panel.plugin("felixf/firekit", {
     'file-image-line': '<path d="M15 8V4H5V20H19V8H15ZM3 2.9918C3 2.44405 3.44749 2 3.9985 2H16L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918ZM11 9.5C11 10.3284 10.3284 11 9.5 11C8.67157 11 8 10.3284 8 9.5C8 8.67157 8.67157 8 9.5 8C10.3284 8 11 8.67157 11 9.5ZM17.5 17L13.5 10L8 17H17.5Z"></path>',
   },
   blocks: {
+    list: {
+      computed: {
+        isSplitable() {
+          return (
+            this.content.text.length > 0 &&
+            this.input().isCursorAtStart === false &&
+            this.input().isCursorAtEnd === false
+          );
+        },
+        liststyles() {
+          return this.field("liststyle", {options: []}).options;
+        },
+        keys() {
+          return {
+            "Mod-Enter": this.split
+          };
+        },
+        marks() {
+          return this.field("text", {}).marks;
+        }
+      },
+      methods: {
+        focus() {
+          this.$refs.input.focus();
+        },
+        input() {
+          return this.$refs.input.$refs.input.$refs.input;
+        },
+        merge(blocks) {
+          this.update({
+            text: blocks
+              .map((block) => block.content.text)
+              .join("")
+              .replaceAll("</ul><ul>", "")
+          });
+        },
+        split() {
+          const contents = this.input().getSplitContent?.();
+
+          if (contents) {
+            this.$emit("split", [
+              {text: contents[0].replace(/(<li><p><\/p><\/li><\/ul>)$/, "</ul>")},
+              {text: contents[1].replace(/^(<ul><li><p><\/p><\/li>)/, "<ul>")}
+            ]);
+          }
+        }
+      },
+      template: `
+<div :data-liststyle="content.liststyle">
+	       <k-input
+			      v-if="liststyles.length > 1"
+			      ref="liststyle"
+			      :empty="false"
+			      :options="liststyles"
+			      :value="content.liststyle"
+			      type="select"
+			      class="k-block-type-list-liststyles"
+			      @input="update({ liststyle: $event })"
+		      />
+	      <k-input
+	      	ref="input"
+	      	:disabled="disabled"
+	      	:keys="keys"
+	      	:marks="marks"
+	      	:value="content.text"
+	      	class="k-block-type-list-input"
+	      	type="list"
+	      	@input="update({ text: $event })"
+	      />
+
+		      </div>
+        `
+    },
     text: {
       computed: {
         component() {

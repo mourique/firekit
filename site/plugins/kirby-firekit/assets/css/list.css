@@ -1,114 +1,47 @@
-
-/*** .block .block-list
+/*** Block List Styles
  *
- *    88           88                           88             88  88
- *    88           88                           88             88  ""               ,d
- *    88           88                           88             88                   88
- *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8       88  88  ,adPPYba,  MM88MMM
- *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"        88  88  I8[    ""    88
- *    88       d8  88  8b       d8  8b          8888[          88  88   `"Y8ba,     88
- *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,       88  88  aa    ]8I    88,
- *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a      88  88  `"YbbdP"'    "Y888
- *
+ *    Styles for the list blocks in the main content wrapper.
  *
  */
 
-main .content-wrapper .row .block-list {
-  container-type: inline-size;
+.block-list.alternative {
+  container-type: inline-size; /* Enables container queries */
 }
 
-main .content-wrapper .row .block-list ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-  font-size: var(--step--2);
+.block-list.alternative ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Resets padding */
+  margin: 0; /* Resets margin */
+  font-size: var(--step--2); /* Sets font size using CSS variable */
 }
 
 @container (min-width: 847px) {
-  main .content-wrapper .row .block-list ul {
-    columns: 2;
-  }
-
-  main .content-wrapper .row .block-list ul li:first-child {
-    border-top: 1px solid black;
+  .block-list.alternative ul {
+    columns: 2; /* Splits list into 2 columns */
   }
 }
 
 @container (min-width: 1200px) {
-  main .content-wrapper .row .block-list ul {
-    columns: 3;
+  .block-list.alternative ul {
+    columns: 3; /* Splits list into 3 columns */
   }
 }
 
-main .content-wrapper .row .block-list ul li {
-  padding: var(--step--2) 0;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
+.block-list.alternative ul li {
+  padding: var(--step--2) 0; /* Vertical padding */
+  -webkit-column-break-inside: avoid; /* Prevents break inside columns for WebKit */
+  page-break-inside: avoid; /* Prevents page break inside */
+  break-inside: avoid; /* Prevents break inside columns for other browsers */
 }
 
-main .content-wrapper .row .block-list ul li + li {
-  border-top: 1px solid black;
+.block-list.alternative ul li + li {
+  border-top: 1px solid black; /* Adds top border to subsequent list items */
 }
 
-main .content-wrapper .row .block-list .list-title {
-  text-transform: uppercase;
+.block-list.alternative ul li:first-child {
+  border-top: 1px solid black; /* Adds top border to first list item */
 }
 
-
-
-/*** .block .block-list
- *
- *    88           88                           88             88  88
- *    88           88                           88             88  ""               ,d
- *    88           88                           88             88                   88
- *    88,dPPYba,   88   ,adPPYba,    ,adPPYba,  88   ,d8       88  88  ,adPPYba,  MM88MMM
- *    88P'    "8a  88  a8"     "8a  a8"     ""  88 ,a8"        88  88  I8[    ""    88
- *    88       d8  88  8b       d8  8b          8888[          88  88   `"Y8ba,     88
- *    88b,   ,a8"  88  "8a,   ,a8"  "8a,   ,aa  88`"Yba,       88  88  aa    ]8I    88,
- *    8Y"Ybbd8"'   88   `"YbbdP"'    `"Ybbd8"'  88   `Y8a      88  88  `"YbbdP"'    "Y888
- *
- *
- */
-
-main .content-wrapper .row .block-list {
-  container-type: inline-size;
-}
-
-main .content-wrapper .row .block-list ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-  font-size: var(--step--2);
-}
-
-@container (min-width: 847px) {
-  main .content-wrapper .row .block-list ul {
-    columns: 2;
-  }
-
-  main .content-wrapper .row .block-list ul li:first-child {
-    border-top: 1px solid black;
-  }
-}
-
-@container (min-width: 1200px) {
-  main .content-wrapper .row .block-list ul {
-    columns: 3;
-  }
-}
-
-main .content-wrapper .row .block-list ul li {
-  padding: var(--step--2) 0;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-
-main .content-wrapper .row .block-list ul li + li {
-  border-top: 1px solid black;
-}
-
-main .content-wrapper .row .block-list .list-title {
-  text-transform: uppercase;
+.block-list.alternative .list-title {
+  text-transform: uppercase; /* Uppercase transformation for list titles */
 }

@@ -38,6 +38,7 @@ return [
 
             ['name' => 'heading', 'subheadline' => true, 'label_de' => 'Überschrift', 'label_en' => 'Heading'],
             ['name' => 'text', 'label_de' => 'Text', 'label_en' => 'Text'],
+            ['name' => 'list', 'label_de' => 'Liste', 'label_en' => 'List'],
             ['name' => 'image', 'label_de' => 'Bild', 'label_en' => 'Image'],
             ['name' => 'quote', 'label_de' => 'Zitat', 'label_en' => 'Quote'],
             ['name' => 'button', 'label_de' => 'Button', 'label_en' => 'Button'],

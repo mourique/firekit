@@ -66,6 +66,7 @@
   padding-top: 5px;
 }
 .k-block-type-heading-levels { grid-area: levels; }
+
 .k-block-type-heading-subline {
   font-size: 60%;
   grid-area: subline;
@@ -322,3 +323,36 @@ try to create hoverable help text in panel
 }
 
 .k-field-header .k-label.k-field-label:hover {}*/
+
+
+/* list block */
+
+.k-block-type-list > div{
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-rows: auto auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "liststyles"
+    "list";
+  padding-top: 5px;
+}
+
+.k-block-type-list-liststyles{
+  grid-area: liststyles;
+  height: 100%;
+	--input-color-back: transparent;
+	--input-color-border: none;
+	--input-color-text: var(--color-gray-600);
+	font-weight: var(--font-bold);
+	text-transform: uppercase;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.k-block-type-list-input {
+	--input-color-back: transparent;
+	--input-color-border: none;
+	--input-outline-focus: none;
+  grid-area: list;
+}
