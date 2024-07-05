@@ -1,0 +1,123 @@
+type: group
+fields:
+  headline_padding:
+    label: Abstände, Begrenzungen & Größen
+    type: headline
+  containersizes:
+    extends: fields/containersizes
+    width: 1/3
+  padding:
+    type: multiselect
+    width: 1/3
+    label: Innenabstand
+    multiple: true
+    options:
+      top_padding: "Oben"
+      bottom_padding: "Unten"
+    default: top_padding, bottom_padding
+  bordertop:
+    type: toggle
+    label: Linie über der Sektion
+    width: 1/3
+    text:
+      - "nein"
+      - "ja"
+  minheight:
+    type: text
+    label: Mindesthöhe der Sektion
+    help: inkl. Einheit (px, %, vh, rem, etc.)
+    width: 1/3
+  headline_mobile:
+    label: Einstellungen für mobile Endgeräte
+    type: headline
+  collapse_on_mobile:
+    type: toggle
+    label: Sektion auf Mobilgeräten zusammenklappen
+    width: 1/2
+  columns_as_sections_on_mobile:
+    type: toggle
+    label: Behandel die Spalten wie einzelne Sektionen in Mobile (mehr Abstand)
+    help: wenn aktiviert, wird der Abstand auf mobile zwischen den Spalten genauso groß gemacht wie zwischen zwei Sektionen
+    text:
+      - "nein"
+      - "ja"
+    width: 1/2
+  headline_colors:
+    label: Farben
+    type: headline
+    help: Alle abhängigen Farben werden anhand der gewählten Hintergrundfarbe definiert. Die Sektion bezieht sich auf den gesamten horizontalen Bereich bis zum Browserrand, die Reihe geht nur bis zur Inhaltsbegrenzung und die Spalten befinden sich einzeln in der Reihe.
+  is_colored:
+    type: toggle
+    label: Layout einfärben
+    icon: palette-line
+    default: false
+    width: 1/4
+  themecolors:
+    extends: fields/themecolors
+    width: 1/4
+    required: true
+    when:
+      is_colored: true
+  colored_area:
+    type: select
+    required: true
+    label: Welche Fläche einfärben
+    default: colored_section
+    when:
+      is_colored: true
+    options:
+      colored_section: "komplett"
+      colored_row: "Nur Reihe"
+    width: 1/4
+  colored_secondary:
+    type: select
+    label: zusätzlich einfärben
+    width: 1/4
+    options:
+      colored_row: "Reihe"
+    when:
+      colored_area: colored_section
+      is_colored: true
+  headline_image:
+    label: Hintergrundbild
+    type: headline
+  add_bgimg:
+    type: toggle
+    label: Bild hinzufügen
+    width: 1/4
+  backgroundimage:
+    label: Background image
+    type: files
+    label: Hintergrundbild
+    width: 1/4
+    when:
+      add_bgimg: true
+  backgroundimage_position:
+    label: Position des Hintergrundbildes
+    type: select
+    width: 1/4
+    required: true
+    default: full
+    when:
+      add_bgimg: true
+    options:
+      full: "volle Breite"
+      right_half: "rechte Hälfte"
+  backgroundimage_vertical_position:
+    label: Vertikale Positionierung des Bildes
+    type: toggles
+    width: 1/4
+    default: top
+    labels: false
+    when:
+      add_bgimg: true
+    options:
+      - value: top
+        text: Oben
+        icon: align-top
+      - value: center
+        text: Mitte
+        icon: align-vertically
+      - value: bottom
+        text: Unten
+        icon: align-bottom

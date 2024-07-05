@@ -50,65 +50,20 @@
 </head>
 
 <body class="page-<?= $page->slug() ?>">
-<?php
-$first_backgroundcolor = "transparent";
-$layouts = $page->layout()->toLayouts();
-if ($layouts->isNotEmpty()) :
-  $themecolors = option('felixf.firekit.themecolors');
-  $lowercase_layoutcolor = strtolower($layouts->first()->themecolors()->toString());
-  $config_color = array_search($lowercase_layoutcolor, array_column($themecolors, 'first-back'));
-  /*$layouts->first()->colored_area();
-  */
-  $layouts->first()->element_styles('section');
-  if ($layouts->first()->is_colored()->isTrue()) {
-    if ($config_color != "") :
-      $color = $themecolors[$config_color];
-      $first_backgroundcolor = $layouts->first()->colored_area() . "-" . $color['name'];
-    endif;
-  }
-endif;
-?>
 
-<header
-  class="<?= $first_backgroundcolor ?>">
+<header class="<?= $first_backgroundcolor ?>">
   <div class="content-wrapper content-regular">
     <div class="row">
       <div class="col col-xs-12 col-md-2 blocks-align-vcenter">
-        <div class="blocks ">
+        <div class="blocks">
           <div class="block-logo">
             <a href="/" class="logo">🔥 Firekit</a>
           </div>
         </div>
       </div>
-
-
-      <?php $items = $pages->listed(); ?>
-      <?php if ($items->isNotEmpty()): ?>
-      <div class="col col-xs-12 col-md-10 blocks-align-vcenter blocks-align-right">
-        <div class="blocks ">
-          <div class="block-nav">
-            <label id="menu-button" for="main-menu">
-
-              <span class="menu-text"> Menü</span>
-              <div class="hamburger hamburger--squeeze">
-                <div class="hamburger-box">
-                  <div class="hamburger-inner"></div>
-                </div>
-              </div>
-            </label>
-            <input type="checkbox" id="main-menu" class="visually-hidden">
-
-            <nav>
-              <?php foreach ($items as $item): ?>
-                <a<?php e($item->isOpen(), ' class="active"') ?>
-                  href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
-              <?php endforeach ?>
-            </nav>
-          </div>
-        </div>
-        <?php endif ?>
-      </div>
+      <?= snippet('partials/simple_nav') ?>
     </div>
+  </div>
   </div>
 </header>
 
