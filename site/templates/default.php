@@ -36,6 +36,10 @@
               if ($column->blocks()->hasType('column_settings')) :
                 array_push($column_classes, $settings->horizontal_align()->value());
                 array_push($column_classes, $settings->vertical_align()->value());
+                if ($settings->is_colored()->isTrue()) :
+                  array_push($column_classes, "is_colored");
+
+                endif;
                 array_push($column_classes, ($settings->col_xs()->isNotEmpty()) ? "col-xs-" . $settings->col_xs() : "col-xs-12");
                 array_push($column_classes, ($settings->col_sm()->isNotEmpty()) ? "col-sm-" . $settings->col_sm() : "col-sm-" . $column->span());
                 array_push($column_classes, ($settings->col_md()->isNotEmpty()) ? "col-md-" . $settings->col_md() : "col-md-" . $column->span());

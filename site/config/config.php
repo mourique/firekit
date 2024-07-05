@@ -30,12 +30,8 @@ return [
         // currently only 'header_on_top'
         'header_style' => 'header_on_top',
 
+        // this defines which blocks will be provided by kirby-firekit
         'blocks' => [
-
-            /* this would be nicer:
-            'heading' => ['subheadline' => true, 'label_de' => 'Überschrift', 'label_en' => 'Heading'],
-            */
-
             ['name' => 'heading', 'subheadline' => true, 'label_de' => 'Überschrift', 'label_en' => 'Heading'],
             ['name' => 'text', 'label_de' => 'Text', 'label_en' => 'Text'],
             ['name' => 'list', 'label_de' => 'Liste', 'label_en' => 'List'],
@@ -51,7 +47,6 @@ return [
             ['name' => 'logoticker', 'label_de' => 'Logoticker', 'label_en' => 'Logoticker'],
             ['name' => 'pagination', 'label_de' => 'Pagination', 'label_en' => 'Pagination'],
             ['name' => 'column_settings', 'label_de' => 'Spalteneinstellungen', 'label_en' => 'column settings'],
-
         ],
         /* define the width of content here, well be used in kirby panel and in css */
         'containersizes' => [
@@ -65,15 +60,21 @@ return [
         'themecolors' => [
             [
                 'name' => 'primary',
-
                 'first-front' => '#333333',
                 'first-back' => '#f5f5f5',
                 'second-front' => '#ffffff',
                 'second-back' => '#333333',
                 'third-front' => '#111111',
                 'third-back' => '#CCCCCC'
-
-            ]
+            ], [
+                'name' => 'secondary',
+                'first-front' => '#FFFFFF',
+                'first-back' => '#111111',
+                'second-front' => '#111111',
+                'second-back' => '#ffffff',
+                'third-front' => '#111111',
+                'third-back' => '#ffffff'
+            ],
         ],
-    ]
+    ],
 ];

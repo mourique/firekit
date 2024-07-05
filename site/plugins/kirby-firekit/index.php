@@ -52,9 +52,7 @@ Kirby::plugin('felixf/firekit', [
         /* define the brand colors here, lowercase letters */
     ],
     'layoutMethods' => [
-        'section_id' => /**
-         * @return string
-         */ function () {
+        'section_id' => function () {
             return "id" . substr(base_convert(md5($this->id()), 16, 32), 0, 12);
         },
         'scoped_styles' => function () { // is embeded into the <section>
@@ -170,9 +168,6 @@ Kirby::plugin('felixf/firekit', [
         'fields/containersizes' => function ($kirby) {
             return include __DIR__ . '/blueprints/fields/containersizes.php';
         },
-    ],
-    'snippets' => [
-        'block_factory_css' => __DIR__ . '/snippets/block_factory_css.php',
     ],
     'translations' => [
         'en' => [

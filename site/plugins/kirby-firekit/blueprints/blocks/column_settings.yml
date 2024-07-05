@@ -1,6 +1,12 @@
 name: Column Settings
 icon: settings
 fields:
+  is_colored:
+    type: toggle
+    label: Spalte einfärben
+    icon: palette-line
+    default: false
+    width: 1/4
   vertical_align:
     label: Vertikale Positionierung des Inhalts
     type: toggles

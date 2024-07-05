@@ -24,55 +24,39 @@
 </div>
  *
  */
+/*** Image Block Styles
+ *
+ *    Styles for the image blocks in the content wrapper.
+ *
+ */
 
 .content-wrapper .block.block-image figure {
-  margin: 0px;
-  padding: 0px;
-  line-height: 1;
-  overflow: hidden;
-  background: transparent;
+  margin: 0; /* Resets margin */
+  padding: 0; /* Resets padding */
+  line-height: 1; /* Sets line height */
+  overflow: hidden; /* Hides overflow */
+  background: transparent; /* Sets transparent background */
 }
-
 
 .content-wrapper .block.block-image figure img {
   height: 100%;
   width: 100%;
   min-height: 100%;
   min-width: 100%;
-  transition: 340ms transform ease-in-out;
-  display: block;
-  aspect-ratio: var(--aspect-ratio);
-  object-fit: cover;
+  transition: 340ms transform ease-in-out; /* Smooth transition for transform */
+  display: block; /* Displays image as block */
+  aspect-ratio: var(--aspect-ratio); /* Sets aspect ratio */
+  object-fit: cover; /* Ensures image covers the figure */
 }
 
 figcaption {
-  font-size: var(--step--1);
-  margin-top: 0.3em !important;
+  font-size: var(--step--1); /* Sets font size */
+  margin-top: 0.3em !important; /* Margin above caption */
+  text-align: right; /* Aligns text to the right */
+  margin-right: 0.5rem; /* Right margin for captions */
 }
 
-/* TODO: switch aspect ratio on portrait */
-@media (orientation: portrait) {
-  .block.block-image figure .img-wrapper {
-    height: var(--image-height-mobile);
-  }
-}
-
-
-/* image with a link */
-.block-image figure a {
-  display: block;
-  text-decoration: none;
-}
-
-.block-image figure a:hover figcaption {
-  text-decoration: underline;
-}
-
-.block-image figure a:hover img {
-  transform: scale(1.02);
-}
-
-/* custom padding and margin, only for bigger screens */
+/* Custom padding and margin for larger screens */
 @media (min-width: 900px) {
   .content-wrapper .block.block-image figure {
     padding-top: var(--padding-top);
@@ -87,20 +71,23 @@ figcaption {
   }
 }
 
+/* Aspect ratio adjustments for portrait orientation */
+@media (orientation: portrait) {
+  .block.block-image figure .img-wrapper {
+    height: var(--image-height-mobile); /* Mobile height for images */
+  }
+}
 
+/* Image with a link styles */
 .block-image figure a {
-  display: block;
-  text-decoration: none;
+  display: block; /* Ensures link covers figure */
+  text-decoration: none; /* Removes underline from links */
 }
 
 .block-image figure a:hover figcaption {
-  text-decoration: underline;
-}
-.block-image figure a:hover img {
-  transform: scale(1.02);
+  text-decoration: underline; /* Underlines caption on hover */
 }
 
-figcaption {
-  text-align: right;
-  margin-right: 0.5rem;
+.block-image figure a:hover img {
+  transform: scale(1.02); /* Slightly enlarges image on hover */
 }
