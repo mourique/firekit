@@ -69,3 +69,4 @@ tabs:
           themepreview:
             type: themepreview
             label: Getting started
+  seo: seo/page

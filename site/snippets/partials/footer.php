@@ -13,6 +13,8 @@
 </footer>
 
 <?= js('assets/js/scripts.js') ?>
+
+<?php snippet('seo/schemas'); // kirby-plugin: tobimori/kirby-seo ?>
 </body>
 
 </html>

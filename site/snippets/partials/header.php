@@ -18,6 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image:alt" content="image description">
 
+  <?php snippet('seo/head'); // kirby-plugin: tobimori/kirby-seo ?>
 
   <?= js('/assets/js/loadeer.js', ['init' => true, 'defer' => true]) ?>
   <?= js('/assets/js/keen-slider.js') ?>
