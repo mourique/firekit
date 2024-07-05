@@ -7,7 +7,6 @@
 body {
   margin: 0;
   padding: 0;
-
 }
 
 html, body {
@@ -20,7 +19,6 @@ body {
   background-color: var(--default-background);
   color: var(--default-foreground);
 }
-
 
 /* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
 a { word-break: break-word; }
@@ -38,6 +36,7 @@ main {
 }
 
 footer {
+  border-top:1px dashed black;
   flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
 }
 
