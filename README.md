@@ -32,5 +32,12 @@ composer create-project getkirby/composerkit my-kirby-site
 
 ---
 
-© 2009 Bastian Allgeier
-[getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
+## License
+
+### Composerkit 
+
+[MIT License](https://github.com/getkirby/composerkit/blob/main/LICENSE) © 2025 Kirby Team
+
+### Kirby CMS
+
+[Kirby License](https://getkirby.com/license) © 2009 Bastian Allgeier
