@@ -1,11 +1,12 @@
 {
-  "name": "getkirby/composerkit",
-  "description": "Kirby Composerkit",
+  "name": "felixf/firekit",
+  "description": "Boilerplate for KirbyCMS, based on composerkit",
   "type": "project",
   "keywords": [
     "kirby",
     "cms",
-    "composerkit"
+    "composerkit",
+		"firekit"
   ],
   "license": "MIT",
   "authors": [
@@ -13,14 +14,14 @@
       "name": "Kirby Team",
       "email": "mail@getkirby.com",
       "homepage": "https://getkirby.com"
+    },
+		    {
+      "name": "Felix Feierabend",
+      "email": "mail@felixf.de",
+      "homepage": "https://felixf.de"
     }
   ],
-  "homepage": "https://getkirby.com",
-  "support": {
-    "email": "support@getkirby.com",
-    "forum": "https://forum.getkirby.com",
-    "source": "https://github.com/getkirby/composerkit"
-  },
+  "homepage": "https://kirby-firekit.de",
   "require": {
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
     "getkirby/cms": "^4.0",
